@@ -16,8 +16,12 @@ dotfiles:
   d_nvim:
     src: .config/nvim
     dst: ~/.config/nvim
+  d_polybar:
+    src: .config/polybar
+    dst: ~/.config/polybar
 profiles:
   Gandalf:
     dotfiles:
     - d_i3
     - d_nvim
+    - d_polybar
