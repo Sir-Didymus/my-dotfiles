@@ -19,9 +19,13 @@ dotfiles:
   d_polybar:
     src: .config/polybar
     dst: ~/.config/polybar
+  d_rofi:
+    src: .config/rofi
+    dst: ~/.config/rofi
 profiles:
   Gandalf:
     dotfiles:
     - d_i3
     - d_nvim
     - d_polybar
+    - d_rofi
