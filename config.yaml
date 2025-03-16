@@ -7,11 +7,17 @@ config:
   link_dotfile_default: nolink
   link_on_import: nolink
   longkey: false
+  impignore:
+  - lazy-lock.json
 dotfiles:
   d_i3:
     src: .config/i3
     dst: ~/.config/i3
+  d_nvim:
+    src: .config/nvim
+    dst: ~/.config/nvim
 profiles:
   Gandalf:
     dotfiles:
     - d_i3
+    - d_nvim
