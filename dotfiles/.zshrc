@@ -80,6 +80,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     ssh-agent
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
