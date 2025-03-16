@@ -25,6 +25,9 @@ dotfiles:
   f_zshrc:
     src: .zshrc
     dst: ~/.zshrc
+  d_alacritty:
+    src: .config/alacritty
+    dst: ~/.config/alacritty
 profiles:
   Gandalf:
     dotfiles:
@@ -33,3 +36,4 @@ profiles:
     - d_polybar
     - d_rofi
     - f_zshrc
+    - d_alacritty
