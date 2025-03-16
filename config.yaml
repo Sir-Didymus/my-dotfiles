@@ -22,6 +22,9 @@ dotfiles:
   d_rofi:
     src: .config/rofi
     dst: ~/.config/rofi
+  f_zshrc:
+    src: .zshrc
+    dst: ~/.zshrc
 profiles:
   Gandalf:
     dotfiles:
@@ -29,3 +32,4 @@ profiles:
     - d_nvim
     - d_polybar
     - d_rofi
+    - f_zshrc
