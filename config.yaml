@@ -9,6 +9,8 @@ config:
   longkey: false
   impignore:
   - lazy-lock.json
+  cmpignore:
+  - lazy-lock.json
 dotfiles:
   d_i3:
     src: .config/i3
