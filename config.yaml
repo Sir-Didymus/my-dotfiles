@@ -31,7 +31,7 @@ dotfiles:
     src: .config/alacritty
     dst: ~/.config/alacritty
 profiles:
-  Gandalf:
+  default:
     dotfiles:
     - d_i3
     - d_nvim
@@ -39,3 +39,9 @@ profiles:
     - d_rofi
     - f_zshrc
     - d_alacritty
+  Gandalf:
+    include:
+      - default
+  Sauron:
+    include:
+      - default 
