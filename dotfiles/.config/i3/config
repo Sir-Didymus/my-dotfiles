@@ -13,9 +13,6 @@ exec --no-startup-id picom -b
 # configure monitors with xrandr
 exec_always --no-startup-id ~/.screenlayout/layout.sh
 
-# kill any hanging polybar processes
-exec_always --no-startup-id  killall polybar
-
 # start polybar and set wallpaper
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
