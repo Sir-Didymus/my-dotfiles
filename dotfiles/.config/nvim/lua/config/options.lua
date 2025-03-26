@@ -1,0 +1,24 @@
+
+-- This setting tells Vim how many columns a tab should be made up of in the editor view.
+-- It takes care only of how tabs will be rendered and has no effect on the actual text.
+vim.opt.tabstop = 2
+
+-- Set a value for this option to control how many columns text will be indented when using indent operations
+-- (such as << or >>) in normal or visual mode; 
+-- this also covers automatic C-style indentation.
+vim.opt.shiftwidth = 2
+
+-- Affects the behavior of the tab and backspace keys.
+-- It specifies the amount of whitespace to be inserted when the tab key is pressed;
+-- and the amount to be removed when the backspace key is pressed.
+vim.opt.softtabstop = 2
+
+-- Determines whether Vim should use spaces or tabs when executing a whitespace command or when the tab key is pressed.
+vim.opt.expandtab = true
+
+-- Automatically inserts one extra level of indentation in some cases, and works for C-like files.
+vim.opt.smartindent = true
+
+-- Wraps text instead of forcing a horizontal scroll.
+-- This is the Vim default.
+vim.opt.wrap = false
