@@ -1,4 +1,8 @@
 
+------------------------------
+-- Tab / indentation ---------
+------------------------------
+
 -- This setting tells Vim how many columns a tab should be made up of in the editor view.
 -- It takes care only of how tabs will be rendered and has no effect on the actual text.
 vim.opt.tabstop = 2
@@ -22,3 +26,28 @@ vim.opt.smartindent = true
 -- Wraps text instead of forcing a horizontal scroll.
 -- This is the Vim default.
 vim.opt.wrap = false
+
+------------------------------
+-- Search --------------------
+------------------------------
+
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = true
+
+------------------------------
+-- Appearance ----------------
+------------------------------
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 10
+
+------------------------------
+-- Behavior ------------------
+------------------------------
+
+vim.opt.hidden = true
+vim.opt.clipboard:append("unnamedplus")
