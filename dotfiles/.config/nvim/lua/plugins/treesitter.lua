@@ -12,8 +12,18 @@ return {
 		ensure_installed = {
 			"bash",
 			"c",
+      "cpp",
+      "html",
 			"lua",
+      "luadoc",
+      "lua patterns",
+      "make",
+      "markdown",
+      "markdown_inline",
+      "toml",
+      "xml",
 			"vim",
+      "vimdoc",
 			"yaml",
 		}
 	}
