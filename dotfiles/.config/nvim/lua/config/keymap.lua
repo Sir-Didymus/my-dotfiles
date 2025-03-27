@@ -6,7 +6,7 @@ local opts = { noremap = true, silent = true }
 --------------------------
 -- Directory Navigation --
 --------------------------
-keymap.set('n', '<leader>f', ':Neotree toggle<CR>', opts)
+keymap.set('n', '<leader>n', ':Neotree toggle<CR>', opts)
 keymap.set('n', '<leader>m', ':Neotree focus<CR>', opts)
 
 --------------------------
