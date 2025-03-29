@@ -1,6 +1,9 @@
 
+-- configure nvim-lspconfig
 local config = function()
+  local cmp_nvm_lsp = require("cmp_nvim_lsp")
   local lspconfig = require("lspconfig")
+  local capabilities = cmp_nvm_lsp.default_capabilities()
 
   ----------------------------
   -- Signs for diagnostics ---
@@ -24,6 +27,7 @@ local config = function()
   -- lua ---------------------
   ----------------------------
   lspconfig.lua_ls.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     settings = { -- custom settings for lua
       Lua = {
@@ -41,11 +45,11 @@ local config = function()
     },
   }
 
-
   ----------------------------
   -- C / C++ -----------------
   ----------------------------
   lspconfig.clangd.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
   }
 
@@ -82,9 +86,13 @@ end
 return {
   "neovim/nvim-lspconfig",
   config = config,
+  lazy = false,
   dependencies = {
     "windwp/nvim-autopairs",
     "williamboman/mason.nvim",
     "creativenull/efmls-configs-nvim",
+    "hrsh7th/nvim-cmp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-nvim-lsp",
   }
 }
