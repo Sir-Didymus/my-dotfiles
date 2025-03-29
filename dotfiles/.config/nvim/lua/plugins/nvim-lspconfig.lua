@@ -16,6 +16,7 @@ local config = function()
     local opts = { noremap = true, silent = true, buffer = bufnr }
 
     -- set keybinds
+    vim.keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- peek definition
     vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   end
 
@@ -40,6 +41,17 @@ local config = function()
     },
   }
 
+
+  ----------------------------
+  -- C / C++ -----------------
+  ----------------------------
+  lspconfig.clangd.setup {
+    on_attach = on_attach,
+  }
+
+  ----------------------------
+  -- Require efm configs -----
+  ----------------------------
   local luacheck = require("efmls-configs.linters.luacheck")
   local stylua = require("efmls-configs.formatters.stylua")
 
