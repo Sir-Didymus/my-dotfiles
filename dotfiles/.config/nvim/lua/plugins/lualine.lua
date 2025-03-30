@@ -1,8 +1,14 @@
 
+----------------------------------------------------------------------------------------------------
+--- nvim-lualine/lualine
+---
+--- A blazing fast and easy to configure Neovim statusline written in Lua.
+----------------------------------------------------------------------------------------------------
+
 local config = function()
   require("lualine").setup {
     options = {
-      cions_enabled = true,
+      icions_enabled = true,
       theme = "auto",
     },
     sections = {

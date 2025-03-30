@@ -1,7 +1,14 @@
 
 ----------------------------------------------------------------------------------------------------
---- Define gloabl vim variables.
+--- lewis6991/gitsigns
+---
+--- Deep buffer integration for Git.
 ----------------------------------------------------------------------------------------------------
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+return {
+  "lewis6991/gitsigns.nvim",
+  lazy = false,
+  config = function()
+    require("gitsigns").setup()
+  end
+}

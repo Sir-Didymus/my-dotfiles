@@ -1,7 +1,11 @@
 
-------------------------------
--- Bootstrap lazy.nvim
-------------------------------
+----------------------------------------------------------------------------------------------------
+--- Setup and configure lazy.nvim
+----------------------------------------------------------------------------------------------------
+
+-----------------------
+--- Bootstrap lazy.nvim
+-----------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -25,9 +29,9 @@ require("config.globals")
 require("config.options")
 require("config.keymap")
 
-------------------------------
--- Setup lazy.nvim -----------
-------------------------------
+-------------------
+--- Setup lazy.nvim
+-------------------
 
 require("lazy").setup({
   spec = {
@@ -36,9 +40,9 @@ require("lazy").setup({
     { import = "plugins/lsp" },
   },
 
-  ----------------------------------------------------------------------------
-  -- Configure any other settings here. See the documentation for more details.
-  ----------------------------------------------------------------------------
+  ------------------------------------------------------------------------------
+  --- Configure any other settings here. See the documentation for more details.
+  ------------------------------------------------------------------------------
 
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "catpuccin" } },

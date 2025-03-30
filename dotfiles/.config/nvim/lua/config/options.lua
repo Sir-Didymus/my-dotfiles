@@ -1,14 +1,18 @@
 
-------------------------------
--- Tab / indentation ---------
-------------------------------
+----------------------------------------------------------------------------------------------------
+--- Set vim options.
+----------------------------------------------------------------------------------------------------
+
+-------------------------
+--- Tab / indentation ---
+-------------------------
 
 -- This setting tells Vim how many columns a tab should be made up of in the editor view.
 -- It takes care only of how tabs will be rendered and has no effect on the actual text.
 vim.opt.tabstop = 2
 
--- Set a value for this option to control how many columns text will be indented when using indent operations
--- (such as << or >>) in normal or visual mode; 
+-- Set a value for this option to control how many columns text will be indented when using
+-- indent operations (such as << or >>) in normal or visual mode;
 -- this also covers automatic C-style indentation.
 vim.opt.shiftwidth = 2
 
@@ -27,18 +31,18 @@ vim.opt.smartindent = true
 -- This is the Vim default.
 vim.opt.wrap = false
 
-------------------------------
--- Search --------------------
-------------------------------
+--------------
+--- Search ---
+--------------
 
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 
-------------------------------
--- Appearance ----------------
-------------------------------
+------------------
+--- Appearance ---
+------------------
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -51,9 +55,9 @@ vim.opt.colorcolumn = "100"
 -- Enables the signcolumn.
 vim.opt.signcolumn = "yes"
 
-------------------------------
--- Behavior ------------------
-------------------------------
+----------------
+--- Behavior ---
+----------------
 
 vim.opt.hidden = true
 vim.opt.clipboard:append("unnamedplus")
