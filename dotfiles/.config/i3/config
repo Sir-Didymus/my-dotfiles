@@ -43,6 +43,9 @@ exec --no-startup-id filen-desktop
 # start birdtray
 exec --no-startup-id birdtray
 
+# shortcut for toggling thunderbird
+bindsym $mod+m exec --no-startup-id birdtray -t
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
