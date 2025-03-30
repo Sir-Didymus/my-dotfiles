@@ -45,6 +45,12 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 10
 
+-- Sets vim's line length marker.
+vim.opt.colorcolumn = "100"
+
+-- Enables the signcolumn.
+vim.opt.signcolumn = "yes"
+
 ------------------------------
 -- Behavior ------------------
 ------------------------------

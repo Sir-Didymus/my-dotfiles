@@ -1,27 +1,19 @@
 
+----------------------------------------------------------------------------------------------------
+-- nvim-lspconfig
+--
+-- nvim-lspconfig is a "data only" repo,
+-- providing basic, default Nvim LSP client configurations for various LSP servers.
+----------------------------------------------------------------------------------------------------
+
+local on_attach = require("util.lsp").on_attach
+local diagnostic_signs = require("util.icons").diagnostic_signs
+
 -- configure nvim-lspconfig
 local config = function()
   local cmp_nvm_lsp = require("cmp_nvim_lsp")
   local lspconfig = require("lspconfig")
   local capabilities = cmp_nvm_lsp.default_capabilities()
-
-  ----------------------------
-  -- Signs for diagnostics ---
-  ----------------------------
-  local diagnostic_signs = { Error = "", Warn = "", Hint = "ﴞ", Info = ""}
-  for type, icon in pairs(diagnostic_signs) do
-		local hl = "DiagnosticSign" .. type
-		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-	end
-
-  local on_attach = function(client, bufnr)
-    -- keybind options
-    local opts = { noremap = true, silent = true, buffer = bufnr }
-
-    -- set keybinds
-    vim.keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- peek definition
-    vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  end
 
   ----------------------------
   -- lua ---------------------
@@ -54,10 +46,24 @@ local config = function()
   }
 
   ----------------------------
+  -- Signs for diagnostics ---
+  ----------------------------
+  for type, icon in pairs(diagnostic_signs) do
+		local hl = "DiagnosticSign" .. type
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+	end
+
+  ----------------------------
   -- Require efm configs -----
   ----------------------------
+
+  -- lua
   local luacheck = require("efmls-configs.linters.luacheck")
   local stylua = require("efmls-configs.formatters.stylua")
+
+  -- C / Cpp
+  local cpplint = require("efmls-configs.linters.cpplint")
+	local clangformat = require("efmls-configs.formatters.clang_format")
 
   ----------------------------
   -- configure efm server ----
@@ -65,6 +71,8 @@ local config = function()
   lspconfig.efm.setup {
     filetypes = {
       "lua",
+      "c",
+      "cpp",
     },
     init_options = {
       documentFormatting = true,
@@ -77,6 +85,8 @@ local config = function()
     settings = {
       languages = {
         lua = { luacheck, stylua },
+        c = { clangformat, cpplint },
+				cpp = { clangformat, cpplint },
       },
     },
   }
