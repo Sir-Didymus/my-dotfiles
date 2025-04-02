@@ -1,4 +1,3 @@
-
 ----------------------------------------------------------------------------------------------------
 --- nvim-neo-tree/neo-tree
 ---
@@ -8,22 +7,22 @@
 ----------------------------------------------------------------------------------------------------
 
 local config = function()
-  require("neo-tree").setup {
-    filesystem = {
-      filtered_items = {
-        visible = true, -- when true, they will just be displayed differently than normal item
-      },
-    },
-  }
+	require("neo-tree").setup({
+		filesystem = {
+			filtered_items = {
+				visible = true, -- when true, they will just be displayed differently than normal item
+			},
+		},
+	})
 end
 
 return {
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
-  config = config,
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-    "MunifTanjim/nui.nvim",
-  },
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
+	config = config,
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		"MunifTanjim/nui.nvim",
+	},
 }

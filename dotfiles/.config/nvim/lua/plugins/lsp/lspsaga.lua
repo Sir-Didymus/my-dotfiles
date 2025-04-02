@@ -1,8 +1,7 @@
-
 ----------------------------------------------------------------------------------------------------
---- nvimdev/lsp-saga
----
---- A light-weight lsp plugin based on neovim's built-in lsp with a highly performant UI.
+-- nvimdev/lsp-saga
+--
+-- A light-weight lsp plugin based on neovim's built-in lsp with a highly performant UI.
 ----------------------------------------------------------------------------------------------------
 
 return {

@@ -1,6 +1,9 @@
-
+----------------------------------------------------------------------------------------------------
+-- nvim-treesitter/nvim-treesitter
+--
 -- Treesitter is a new parser generator tool that we can use in Neovim
 -- to power faster and more accurate syntax highlighting.
+----------------------------------------------------------------------------------------------------
 
 return {
 	"nvim-treesitter/nvim-treesitter",
@@ -12,19 +15,20 @@ return {
 		ensure_installed = {
 			"bash",
 			"c",
-      "cpp",
-      "html",
+			"cpp",
+			"gitignore",
+			"html",
 			"lua",
-      "luadoc",
-      "lua patterns",
-      "make",
-      "markdown",
-      "markdown_inline",
-      "toml",
-      "xml",
+			"luadoc",
+			"lua patterns",
+			"make",
+			"markdown",
+			"markdown_inline",
+			"toml",
+			"xml",
 			"vim",
-      "vimdoc",
+			"vimdoc",
 			"yaml",
-		}
-	}
+		},
+	},
 }

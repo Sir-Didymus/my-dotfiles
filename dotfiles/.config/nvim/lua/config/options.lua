@@ -47,6 +47,8 @@ vim.opt.hlsearch = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
+
+-- Keeps curser centered vertically when scrolling
 vim.opt.scrolloff = 10
 
 -- Sets vim's line length marker.
