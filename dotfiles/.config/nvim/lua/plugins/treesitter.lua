@@ -5,13 +5,22 @@
 -- to power faster and more accurate syntax highlighting.
 ----------------------------------------------------------------------------------------------------
 
-return {
-	"nvim-treesitter/nvim-treesitter",
-	version = false, -- last release is way too old and doesn't work on Windows
-	build = ":TSUpdate",
-	opts = {
+local config = function()
+	require("nvim-treesitter.configs").setup({
+		version = false, -- last release is way too old and doesn't work on Windows
+		build = ":TSUpdate",
+		autotag = { enable = false },
 		highlight = { enable = true },
 		indent = { enable = true },
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = "<C-s>",
+				node_incremental = "<C-s>",
+				scope_incremental = false,
+				node_decremental = "<BS>",
+			},
+		},
 		ensure_installed = {
 			"bash",
 			"c",
@@ -20,15 +29,19 @@ return {
 			"html",
 			"lua",
 			"luadoc",
-			"lua patterns",
 			"make",
 			"markdown",
 			"markdown_inline",
 			"toml",
-			"xml",
 			"vim",
 			"vimdoc",
+			"xml",
 			"yaml",
 		},
-	},
+	})
+end
+return {
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	config = config,
 }
