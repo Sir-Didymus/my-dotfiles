@@ -67,15 +67,22 @@ local config = function()
 	local clangtidy = require("efmls-configs.linters.clang_tidy")
 	local clangformat = require("efmls-configs.formatters.clang_format")
 
+	-- html / css
+	local prettier_d = require("efmls-configs.formatters.prettier_d")
+
 	--------------------------------------------------------------------------------------------------
 	-- Configure efm server
 	--------------------------------------------------------------------------------------------------
 	lspconfig.efm.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
 		filetypes = {
 			"lua",
 			"c",
 			"cpp",
+			"css",
 			"h",
+			"html",
 			"hpp",
 		},
 		init_options = {
@@ -92,6 +99,8 @@ local config = function()
 				lua = { luacheck, stylua },
 				c = { clangformat, clangtidy },
 				cpp = { clangformat, clangtidy },
+				html = { prettier_d },
+				css = { prettier_d },
 			},
 		},
 	})
