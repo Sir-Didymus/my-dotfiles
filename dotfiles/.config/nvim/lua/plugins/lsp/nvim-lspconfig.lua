@@ -48,6 +48,25 @@ local config = function()
 	})
 
 	--------------------------------------------------------------------------------------------------
+	-- Python
+	--------------------------------------------------------------------------------------------------
+	lspconfig.pyright.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			pyright = {
+				disableOrganizeImports = false,
+				analysis = {
+					useLibraryCodeForTypes = true,
+					autoSearchPaths = true,
+					diagnosticMode = "workspace",
+					autoImportCompletions = true,
+				},
+			},
+		},
+	})
+
+	--------------------------------------------------------------------------------------------------
 	-- Signs for diagnostics
 	--------------------------------------------------------------------------------------------------
 	for type, icon in pairs(diagnostic_signs) do
@@ -70,6 +89,10 @@ local config = function()
 	-- html / css
 	local prettier_d = require("efmls-configs.formatters.prettier_d")
 
+	-- Python
+	local ruff = require("efmls-configs.linters.ruff")
+	local black = require("efmls-configs.formatters.black")
+
 	--------------------------------------------------------------------------------------------------
 	-- Configure efm server
 	--------------------------------------------------------------------------------------------------
@@ -84,6 +107,7 @@ local config = function()
 			"h",
 			"html",
 			"hpp",
+			"python",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -101,6 +125,7 @@ local config = function()
 				cpp = { clangformat, clangtidy },
 				html = { prettier_d },
 				css = { prettier_d },
+				python = { ruff, black },
 			},
 		},
 	})

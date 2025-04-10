@@ -9,6 +9,8 @@ local opts = {
 		"efm",
 		"lua_ls",
 		"clangd",
+    "pyright",
+    "ruff",
 	},
 	automatic_installation = true,
 }
