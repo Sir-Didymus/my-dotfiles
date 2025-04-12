@@ -34,6 +34,7 @@ local config = function()
 			"make",
 			"markdown",
 			"markdown_inline",
+      "prolog",
 			"toml",
 			"vim",
 			"vimdoc",
