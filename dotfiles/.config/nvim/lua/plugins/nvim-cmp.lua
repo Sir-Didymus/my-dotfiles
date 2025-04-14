@@ -1,9 +1,7 @@
-----------------------------------------------------------------------------------------------------
 -- hrsh7th/nvim-cmp
 --
 -- A completion engine plugin for neovim written in Lua.
 -- Completion sources are installed from external repositories and "sourced".
-----------------------------------------------------------------------------------------------------
 
 return {
 	"hrsh7th/nvim-cmp",
@@ -37,6 +35,7 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
+        { name = "copilot" },
 				{ name = "nvim_lsp" }, -- lsp
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
