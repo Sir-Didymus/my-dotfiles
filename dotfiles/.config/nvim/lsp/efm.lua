@@ -14,6 +14,7 @@ local clangformat = require("efmls-configs.formatters.clang_format")
 
 -- html / css
 local prettier_d = require("efmls-configs.formatters.prettier_d")
+local stylelint = require("efmls-configs.linters.stylelint")
 
 -- Python
 local ruff = require("efmls-configs.linters.ruff")
@@ -28,8 +29,8 @@ local on_attach = require("util.lsp").on_attach
 local capabilities = cmp_nvm_lsp.default_capabilities()
 
 local efm_settings = {
-	cmd = { "efm-langserver" },
-	single_file_support = true,
+  root_markers = { ".git/", ".luarc.json", ".luarc.jsonc"},
+	cmd = { "efm-langserver" }, single_file_support = true,
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = {
@@ -52,12 +53,10 @@ local efm_settings = {
 	},
 	settings = {
 		rootMarkers = { ".git/" },
-		languages = {
-			lua = { luacheck, stylua },
+		languages = { lua = { luacheck, stylua },
 			c = { clangformat, clangtidy },
 			cpp = { clangformat, clangtidy },
-			html = { prettier_d },
-			css = { prettier_d },
+			html = { prettier_d }, css = { prettier_d, stylelint },
 			python = { ruff, black },
 		},
 	},
