@@ -1,9 +1,7 @@
-----------------------------------------------------------------------------------------------------
 -- nvim-treesitter/nvim-treesitter
 --
 -- Treesitter is a new parser generator tool that we can use in Neovim
 -- to power faster and more accurate syntax highlighting.
-----------------------------------------------------------------------------------------------------
 
 local config = function()
 	require("nvim-treesitter.configs").setup({
@@ -25,16 +23,22 @@ local config = function()
 			"bash",
 			"c",
 			"cpp",
-      "css",
+			"css",
+      "comment",
 			"gitignore",
 			"html",
-      "javascript",
+      "http",
+      "ini",
+			"javascript",
+      "json",
+      "latex",
 			"lua",
 			"luadoc",
 			"make",
 			"markdown",
 			"markdown_inline",
-      "prolog",
+			"prolog",
+      "python",
 			"toml",
 			"vim",
 			"vimdoc",

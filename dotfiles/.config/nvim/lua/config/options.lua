@@ -1,11 +1,11 @@
 
-----------------------------------------------------------------------------------------------------
---- Set vim options.
-----------------------------------------------------------------------------------------------------
+---------------------
+-- Set vim options --
+---------------------
 
--------------------------
---- Tab / indentation ---
--------------------------
+-----------------------
+-- Tab / indentation --
+-----------------------
 
 -- This setting tells Vim how many columns a tab should be made up of in the editor view.
 -- It takes care only of how tabs will be rendered and has no effect on the actual text.
@@ -31,24 +31,24 @@ vim.opt.smartindent = true
 -- This is the Vim default.
 vim.opt.wrap = false
 
---------------
---- Search ---
---------------
+------------
+-- Search --
+------------
 
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 
-------------------
---- Appearance ---
-------------------
+----------------
+-- Appearance --
+----------------
 
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 
--- Keeps curser centered vertically when scrolling
+-- Keeps curser centered vertically when scrolling.
 vim.opt.scrolloff = 10
 
 -- Sets vim's line length marker.
@@ -57,9 +57,9 @@ vim.opt.colorcolumn = "100"
 -- Enables the signcolumn.
 vim.opt.signcolumn = "yes"
 
-----------------
---- Behavior ---
-----------------
+--------------
+-- Behavior --
+--------------
 
 vim.opt.hidden = true
 vim.opt.clipboard:append("unnamedplus")

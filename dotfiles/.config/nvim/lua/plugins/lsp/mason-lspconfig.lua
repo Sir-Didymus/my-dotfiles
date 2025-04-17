@@ -10,7 +10,8 @@ local opts = {
 		"pyright",
 		"ruff",
 		"html",
-    "cssls"
+    "cssls",
+    "texlab",
 	},
 	automatic_installation = true,
 }
