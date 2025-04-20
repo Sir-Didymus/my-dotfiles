@@ -33,6 +33,9 @@ dotfiles:
   d_yazi:
     src: .config/yazi
     dst: ~/.config/yazi
+  d_kitty:
+    src: .config/kitty
+    dst: ~/.config/kitty
 profiles:
   default:
     dotfiles:
@@ -43,6 +46,7 @@ profiles:
     - f_zshrc
     - d_alacritty
     - d_yazi
+    - d_kitty
   Gandalf:
     include:
     - default
