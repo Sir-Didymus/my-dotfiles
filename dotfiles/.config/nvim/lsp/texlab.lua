@@ -7,6 +7,13 @@ local capabilities = cmp_nvm_lsp.default_capabilities()
 local settings = {
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		texlab = {
+			diagnostics = {
+				enabled = true,
+			},
+		},
+	},
 }
 
-vim.lsp.config("textlab", settings)
+vim.lsp.config("texlab", settings)
