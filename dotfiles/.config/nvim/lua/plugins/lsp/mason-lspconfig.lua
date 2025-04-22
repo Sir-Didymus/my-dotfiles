@@ -11,6 +11,7 @@ local opts = {
 		"ruff",
 		"html",
     "cssls",
+    "taplo",
     "texlab",
 	},
 	automatic_installation = true,
