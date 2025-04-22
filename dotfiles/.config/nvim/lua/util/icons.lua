@@ -1,4 +1,6 @@
--- Icons used in the configuration.
+--------------------------------------
+-- Icons used in the configuration. --
+--------------------------------------
 
 local M = {}
 

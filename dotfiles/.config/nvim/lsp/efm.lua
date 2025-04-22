@@ -24,9 +24,8 @@ local black = require("efmls-configs.formatters.black")
 -- Configure efm server --
 --------------------------
 
-local cmp_nvm_lsp = require("cmp_nvim_lsp")
 local on_attach = require("util.lsp").on_attach
-local capabilities = cmp_nvm_lsp.default_capabilities()
+local capabilities = require("util.capabilities").capabilities()
 
 local efm_settings = {
   root_markers = { ".git/", ".luarc.json", ".luarc.jsonc"},
