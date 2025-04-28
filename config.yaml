@@ -8,9 +8,9 @@ config:
   link_on_import: nolink
   longkey: false
   impignore:
-  - lazy-lock.json
+    - lazy-lock.json
   cmpignore:
-  - lazy-lock.json
+    - lazy-lock.json
 dotfiles:
   d_i3:
     src: .config/i3
@@ -36,20 +36,24 @@ dotfiles:
   d_kitty:
     src: .config/kitty
     dst: ~/.config/kitty
+  d_zathura:
+    src: .config/zathura
+    dst: ~/.config/zathura
 profiles:
   default:
     dotfiles:
-    - d_i3
-    - d_nvim
-    - d_polybar
-    - d_rofi
-    - f_zshrc
-    - d_alacritty
-    - d_yazi
-    - d_kitty
+      - d_i3
+      - d_nvim
+      - d_polybar
+      - d_rofi
+      - f_zshrc
+      - d_alacritty
+      - d_yazi
+      - d_kitty
+      - d_zathura
   Gandalf:
     include:
-    - default
+      - default
   Sauron:
     include:
-    - default
+      - default
