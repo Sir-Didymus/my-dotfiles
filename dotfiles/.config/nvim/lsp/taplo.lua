@@ -1,4 +1,6 @@
 -- Configure the "taplo" lsp server.
+--
+-- Languages: toml
 
 local on_attach = require("util.lsp").on_attach
 local capabilities = require("util.capabilities").capabilities()

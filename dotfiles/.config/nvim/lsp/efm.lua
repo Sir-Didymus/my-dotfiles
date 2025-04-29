@@ -4,24 +4,26 @@
 -- Require efm configs --
 -------------------------
 
+-- Prettier_d - Works for many languages
+local prettier_d = require("efmls-configs.formatters.prettier_d")
+
 -- C / Cpp
-local clangtidy = require("efmls-configs.linters.clang_tidy")
 local clangformat = require("efmls-configs.formatters.clang_format")
+local clangtidy = require("efmls-configs.linters.clang_tidy")
 
 -- Html / Css
-local prettier_d = require("efmls-configs.formatters.prettier_d")
 local stylelint = require("efmls-configs.linters.stylelint")
 
 -- Lua
-local luacheck = require("efmls-configs.linters.luacheck")
 local stylua = require("efmls-configs.formatters.stylua")
+local luacheck = require("efmls-configs.linters.luacheck")
 
 -- Markdown
 local markdownlint = require("efmls-configs.linters.markdownlint")
 
 -- Python
-local ruff = require("efmls-configs.linters.ruff")
 local black = require("efmls-configs.formatters.black")
+local ruff = require("efmls-configs.linters.ruff")
 
 -- Yaml
 local yamllint = require("efmls-configs.linters.yamllint")
@@ -66,9 +68,9 @@ local efm_settings = {
 			cpp = { clangformat, clangtidy },
 			css = { prettier_d, stylelint },
 			html = { prettier_d },
-			lua = { luacheck, stylua },
+			lua = { stylua, luacheck},
 			markdown = { prettier_d, markdownlint },
-			python = { ruff, black },
+			python = { black, ruff },
       yaml = { prettier_d, yamllint },
 		},
 	},

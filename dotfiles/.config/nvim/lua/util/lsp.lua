@@ -1,10 +1,8 @@
---------------------------------------------------------------------
--- Contains the on_attach function used in the lsp configuration. --
---------------------------------------------------------------------
+-- Contains the on_attach function used in the lsp configuration.
 
 local M = {}
 
-M.on_attach = function(_client, bufnr)
+M.on_attach = function(client, bufnr)
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -18,14 +16,22 @@ M.on_attach = function(_client, bufnr)
 	vim.keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show diagnostics for line
 	vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 
-	vim.keymap.set("n", "<leader>fa", function() -- format code
-		local efm = vim.lsp.get_clients({ name = "efm" })
+	-- Formatting with efm
+	if client.name == "efm" then
+		vim.keymap.set("n", "<leader>fe", function()
+			vim.lsp.buf.format({ name = "efm", async = true })
+		end, { desc = "Format file with efm" }) -- Add description for which-key
+	end
 
-		if vim.tbl_isempty(efm) then
-			return
-		end
-		vim.lsp.buf.format({ name = "efm", async = true })
-	end, { desc = "Format file" }) -- Add description for which-key
+	-- Formatting with lsp
+	if client.name ~= "efm" and client.supports_method("textDocument/formatting") then
+		vim.keymap.set("n", "<leader>fl", function()
+			vim.lsp.buf.format({
+				async = true,
+				name = client.name,
+			})
+		end, { desc = "Format file with LSP" }) -- Add description for which-key
+	end
 end
 
 return M
