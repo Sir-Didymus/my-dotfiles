@@ -28,6 +28,9 @@ local ruff = require("efmls-configs.linters.ruff")
 -- Yaml
 local yamllint = require("efmls-configs.linters.yamllint")
 
+-- CMake
+local gersemi = require('efmls-configs.formatters.gersemi')
+
 --------------------------
 -- Configure efm server --
 --------------------------
@@ -45,6 +48,7 @@ local efm_settings = {
 		"c",
 		"cpp",
 		"css",
+    "cmake",
 		"h",
 		"html",
 		"hpp",
@@ -67,6 +71,7 @@ local efm_settings = {
 			c = { clangformat, clangtidy },
 			cpp = { clangformat, clangtidy },
 			css = { prettier_d, stylelint },
+      cmake = { gersemi },
 			html = { prettier_d },
 			lua = { stylua, luacheck},
 			markdown = { prettier_d, markdownlint },

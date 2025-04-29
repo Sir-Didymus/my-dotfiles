@@ -7,6 +7,7 @@ local opts = {
 		"efm",
 		"lua_ls",
 		"clangd",
+    "cmake",
 		"pyright",
 		"ruff",
 		"html",
