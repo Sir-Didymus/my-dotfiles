@@ -27,8 +27,8 @@ M.on_attach = function(client, bufnr)
 	if client.name ~= "efm" and client.supports_method("textDocument/formatting") then
 		vim.keymap.set("n", "<leader>fl", function()
 			vim.lsp.buf.format({
-				async = true,
 				name = client.name,
+				async = true,
 			})
 		end, { desc = "Format file with LSP" }) -- Add description for which-key
 	end
