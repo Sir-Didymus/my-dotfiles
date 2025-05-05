@@ -1,8 +1,6 @@
-----------------------------------------------------------------------------------------------------
 -- nvim-telescope/telescope
 --
 -- telescope.nvim is a highly extendable fuzzy finder over lists.
-----------------------------------------------------------------------------------------------------
 
 local keymap = vim.keymap
 local builtin = require("telescope.builtin")

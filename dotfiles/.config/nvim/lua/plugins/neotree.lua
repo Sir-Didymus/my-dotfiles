@@ -1,10 +1,8 @@
-----------------------------------------------------------------------------------------------------
---- nvim-neo-tree/neo-tree
----
---- Neo-tree is a Neovim plugin to browse the file system and other tree like structures
---- in whatever style suits you, including sidebars, floating windows, netrw split style,
---- or all of them at once!
-----------------------------------------------------------------------------------------------------
+-- nvim-neo-tree/neo-tree
+--
+-- Neo-tree is a Neovim plugin to browse the file system and other tree like structures
+-- in whatever style suits you, including sidebars, floating windows, netrw split style,
+-- or all of them at once!
 
 local config = function()
 	require("neo-tree").setup({

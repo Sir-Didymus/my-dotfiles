@@ -42,4 +42,4 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- Toggle Minimize
 ---------------
 
 keymap.set("v", "<", "<gv") -- Indent Left
-keymap.set("v", ">", ">gv") -- INdent Right
+keymap.set("v", ">", ">gv") -- Indent Right

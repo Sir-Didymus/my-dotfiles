@@ -1,8 +1,6 @@
-----------------------------------------------------------------------------------------------------
---- nvim-lualine/lualine
----
---- A blazing fast and easy to configure Neovim statusline written in Lua.
-----------------------------------------------------------------------------------------------------
+-- nvim-lualine/lualine
+--
+-- A blazing fast and easy to configure Neovim statusline written in Lua.
 
 local config = function()
 	require("lualine").setup({

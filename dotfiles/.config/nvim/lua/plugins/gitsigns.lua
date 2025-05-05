@@ -1,6 +1,6 @@
---- lewis6991/gitsigns
----
---- Deep buffer integration for Git.
+-- lewis6991/gitsigns
+--
+-- Deep buffer integration for Git.
 
 return {
 	"lewis6991/gitsigns.nvim",
