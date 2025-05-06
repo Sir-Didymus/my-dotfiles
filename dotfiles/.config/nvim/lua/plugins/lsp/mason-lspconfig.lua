@@ -9,6 +9,7 @@ local opts = {
 		"clangd",
     "cmake",
 		"pyright",
+    "basedpyright",
 		"ruff",
 		"html",
     "cssls",
