@@ -21,4 +21,4 @@ local settings = {
 	},
 }
 
-vim.lsp.config("basedpyright", settings)
+-- vim.lsp.config("basedpyright", settings)

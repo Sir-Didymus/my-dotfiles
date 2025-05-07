@@ -4,7 +4,7 @@
 
 local config = function()
 	-- Set keybindings to toggle twilight
-	vim.keymap.set("n", "<leader>tw", ":Twilight<CR>", {desc="Toggle Twiglight Mode"})
+	vim.keymap.set("n", "<leader>tw", ":Twilight<CR>", { desc = "Toggle Twiglight Mode" })
 
 	require("twilight").setup({
 		context = 10, -- amount of lines we will try to show around the current line

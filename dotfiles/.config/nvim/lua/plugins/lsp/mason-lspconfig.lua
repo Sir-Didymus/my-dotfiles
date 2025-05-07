@@ -8,7 +8,6 @@ local opts = {
 		"lua_ls",
 		"clangd",
     "cmake",
-		"pyright",
     "basedpyright",
 		"ruff",
 		"html",
