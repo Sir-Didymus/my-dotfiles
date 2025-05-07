@@ -23,7 +23,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
---This is also a good place to setup other settings (vim.opt)
+-- This is also a good place to setup other settings (vim.opt)
 require("config.globals")
 require("config.options")
 require("config.keymap")
@@ -38,7 +38,7 @@ require("lazy").setup({
 		-- import your plugins
 		{ import = "plugins" },
 		{ import = "plugins/lsp" },
-		{ import = "plugins/copilot" },
+		{ import = "plugins/ai" },
 	},
 
 	--------------------------------------------------------------------------------
