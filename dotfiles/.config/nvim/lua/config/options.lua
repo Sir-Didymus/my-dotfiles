@@ -1,4 +1,3 @@
-
 ---------------------
 -- Set vim options --
 ---------------------
@@ -23,6 +22,9 @@ vim.opt.softtabstop = 2
 
 -- Determines whether Vim should use spaces or tabs when executing a whitespace command or when the tab key is pressed.
 vim.opt.expandtab = true
+
+-- Copy indent from current line when starting a new line.
+vim.opt.autoindent = true
 
 -- Automatically inserts one extra level of indentation in some cases, and works for C-like files.
 vim.opt.smartindent = true

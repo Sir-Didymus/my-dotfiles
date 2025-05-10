@@ -43,3 +43,12 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- Toggle Minimize
 
 keymap.set("v", "<", "<gv") -- Indent Left
 keymap.set("v", ">", ">gv") -- Indent Right
+
+---------
+-- Lsp --
+---------
+
+-- Toggle all lsp diagnostics on/off (this does not stop lsp servers, it only hides diagnostics)
+keymap.set("n", "<leader>td", function()
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Toggle all lsp diagnostics", noremap = true, silent = true })
