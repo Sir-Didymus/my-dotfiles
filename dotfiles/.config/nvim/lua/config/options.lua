@@ -63,5 +63,14 @@ vim.opt.signcolumn = "yes"
 -- Behavior --
 --------------
 
+-- When off, a buffer is unloaded when it is abandoned.
+-- When on, a buffer becomes hidden when it is abandoned.
 vim.opt.hidden = true
+
 vim.opt.clipboard:append("unnamedplus")
+
+-- When on, splitting a window with `:split` will put the new window below the current one.
+vim.opt.splitbelow = true
+
+-- When on, splitting a window with `:vsplit` will put the new window right of the current one.
+vim.opt.splitright = true
