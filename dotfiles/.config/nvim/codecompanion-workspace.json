@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "Neovim Configuration Workspace",
+  "system_prompt": "You are assisting with the development and configuration of a Neovim setup. Provide detailed and accurate guidance.",
+  "groups": [
+    {
+      "name": "Core Configuration",
+      "system_prompt": "This group contains the core setup files for Neovim, including the main configuration and basic settings.",
+      "data": [
+        "init.lua",
+        "lazy.lua",
+        "globals.lua",
+        "keymap.lua",
+        "options.lua"
+      ]
+    },
+    {
+      "name": "LSP Configuration",
+      "system_prompt": "This group focuses on configuring the Language Server Protocol (LSP) for Neovim, including individual server settings and related plugins.",
+      "data": [
+        "lsp_files",
+        "lspsaga",
+        "mason",
+        "mason_lspconfig",
+        "nvim_lspconfig"
+      ]
+    },
+    {
+      "name": "Plugin Management",
+      "system_prompt": "This group includes configurations for managing and customizing Neovim plugins.",
+      "data": ["plugin_files"]
+    },
+    {
+      "name": "Utility Functions",
+      "system_prompt": "This group contains utility functions and helper scripts used across the Neovim configuration.",
+      "data": ["capabilities", "icons", "util_lsp"]
+    },
+    {
+      "name": "AI and Code Assistance",
+      "system_prompt": "This group focuses on AI-based plugins and tools for code assistance, such as CodeCompanion and Copilot.",
+      "data": ["codecompanion", "copilot", "copilot_cmp"]
+    }
+  ],
+  "data": {
+    "init.lua": {
+      "type": "file",
+      "path": "init.lua",
+      "description": "Main entry point for Neovim configuration."
+    },
+    "lazy.lua": {
+      "type": "file",
+      "path": "lua/config/lazy.lua",
+      "description": "Configure the Lazy Plugin Manager."
+    },
+    "globals.lua": {
+      "type": "file",
+      "path": "lua/config/globals.lua",
+      "description": "Global variables and settings for Neovim."
+    },
+    "keymap.lua": {
+      "type": "file",
+      "path": "lua/config/keymap.lua",
+      "description": "Key mappings for Neovim."
+    },
+    "options.lua": {
+      "type": "file",
+      "path": "lua/config/options.lua",
+      "description": "General options and settings for Neovim."
+    },
+    "lsp_files": {
+      "type": "file",
+      "path": "lsp/",
+      "description": "Directory containing individual LSP server configurations."
+    },
+    "lspsaga": {
+      "type": "file",
+      "path": "lua/plugins/lsp/lspsaga.lua",
+      "description": "Configuration for the Lspsaga plugin."
+    },
+    "mason": {
+      "type": "file",
+      "path": "lua/plugins/lsp/mason.lua",
+      "description": "Configuration for the Mason plugin."
+    },
+    "mason_lspconfig": {
+      "type": "file",
+      "path": "lua/plugins/lsp/mason-lspconfig.lua",
+      "description": "Configuration for Mason LSP integration."
+    },
+    "nvim_lspconfig": {
+      "type": "file",
+      "path": "lua/plugins/lsp/nvim-lspconfig.lua",
+      "description": "Configuration for the nvim-lspconfig plugin."
+    },
+    "plugin_files": {
+      "type": "file",
+      "path": "lua/plugins/",
+      "description": "Directory containing plugin configurations."
+    },
+    "capabilities": {
+      "type": "file",
+      "path": "lua/util/capabilities.lua",
+      "description": "Utility for setting up LSP capabilities."
+    },
+    "icons": {
+      "type": "file",
+      "path": "lua/util/icons.lua",
+      "description": "Icon definitions for Neovim UI."
+    },
+    "util_lsp": {
+      "type": "file",
+      "path": "lua/util/lsp.lua",
+      "description": "Utility functions for LSP configuration."
+    },
+    "codecompanion": {
+      "type": "file",
+      "path": "lua/plugins/ai/codecompanion.lua",
+      "description": "Configuration for the CodeCompanion plugin."
+    },
+    "copilot": {
+      "type": "file",
+      "path": "lua/plugins/ai/copilot.lua",
+      "description": "Configuration for the Copilot plugin."
+    },
+    "copilot_cmp": {
+      "type": "file",
+      "path": "lua/plugins/ai/copilot-cmp.lua",
+      "description": "Configuration for Copilot's completion integration."
+    }
+  }
+}
