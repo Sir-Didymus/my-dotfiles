@@ -6,23 +6,27 @@
     {
       "name": "Core Configuration",
       "system_prompt": "This group contains the core setup files for Neovim, including the main configuration and basic settings.",
-      "data": [
-        "init.lua",
-        "lazy.lua",
-        "globals.lua",
-        "keymap.lua",
-        "options.lua"
-      ]
+      "data": ["init", "lazy", "globals", "keymap", "options"]
     },
     {
       "name": "LSP Configuration",
       "system_prompt": "This group focuses on configuring the Language Server Protocol (LSP) for Neovim, including individual server settings and related plugins.",
       "data": [
-        "lsp_files",
+        "basedpyright",
+        "clangd",
+        "cmake",
+        "cssls",
+        "efm",
+        "html",
+        "ltex_plus",
+        "lua_ls",
+        "taplo",
+        "texlab",
         "lspsaga",
         "mason",
         "mason_lspconfig",
-        "nvim_lspconfig"
+        "nvim_lspconfig",
+        "util_lsp"
       ]
     },
     {
@@ -42,35 +46,80 @@
     }
   ],
   "data": {
-    "init.lua": {
+    "init": {
       "type": "file",
       "path": "init.lua",
       "description": "Main entry point for Neovim configuration."
     },
-    "lazy.lua": {
+    "lazy": {
       "type": "file",
       "path": "lua/config/lazy.lua",
       "description": "Configure the Lazy Plugin Manager."
     },
-    "globals.lua": {
+    "globals": {
       "type": "file",
       "path": "lua/config/globals.lua",
       "description": "Global variables and settings for Neovim."
     },
-    "keymap.lua": {
+    "keymap": {
       "type": "file",
       "path": "lua/config/keymap.lua",
       "description": "Key mappings for Neovim."
     },
-    "options.lua": {
+    "options": {
       "type": "file",
       "path": "lua/config/options.lua",
       "description": "General options and settings for Neovim."
     },
-    "lsp_files": {
+    "basedpyright": {
+      "type": "symbols",
+      "path": "lsp/basedpyright.lua",
+      "description": "Configuration for the BasedPyright LSP."
+    },
+    "clangd": {
+      "type": "symbols",
+      "path": "lsp/clangd.lua",
+      "description": "Configuration for the Clangd LSP."
+    },
+    "cmake": {
+      "type": "symbols",
+      "path": "lsp/cmake.lua",
+      "description": "Configuration for the CMake LSP."
+    },
+    "cssls": {
+      "type": "symbols",
+      "path": "lsp/cssls.lua",
+      "description": "Configuration for the CSS LSP."
+    },
+    "efm": {
       "type": "file",
-      "path": "lsp/",
-      "description": "Directory containing individual LSP server configurations."
+      "path": "lsp/efm.lua",
+      "description": "Configuration for the EFM LSP."
+    },
+    "html": {
+      "type": "symbols",
+      "path": "lsp/html.lua",
+      "description": "Configuration for the HTML LSP."
+    },
+    "ltex_plus": {
+      "type": "symbols",
+      "path": "lsp/ltex_plus.lua",
+      "description": "Configuration for the LTeX Plus LSP."
+    },
+    "lua_ls": {
+      "type": "symbols",
+      "path": "lsp/lua_ls.lua",
+      "description": "Configuration for the Lua LSP."
+    },
+    "taplo": {
+      "type": "symbols",
+      "path": "lsp/taplo.lua",
+      "description": "Configuration for the Taplo LSP."
+    },
+    "texlab": {
+      "type": "symbols",
+      "path": "lsp/texlab.lua",
+      "description": "Configuration for the TexLab LSP."
     },
     "lspsaga": {
       "type": "file",
