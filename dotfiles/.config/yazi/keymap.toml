@@ -2,5 +2,5 @@
 prepend_keymap = [
 	{ on = [ "g", "d" ], run = "cd ~/dev",   desc = "Go ~/dev" },
 	{ on = [ "g", "D" ],       run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
-	{ on = [ "g", "F" ],       run = "cd ~/Files",   desc = "Go ~/Files" },
+	{ on = [ "g", "f" ],       run = "cd ~/files",   desc = "Go ~/files" },
 ]
