@@ -12,6 +12,7 @@ local settings = {
 		basedpyright = {
 			disableOrganizeImports = false,
 			analysis = {
+				typeCheckingMode = "basic",
 				autoSearchPaths = true,
 				autoImportCompletions = true,
 				diagnosticMode = "workspace",
@@ -21,4 +22,4 @@ local settings = {
 	},
 }
 
--- vim.lsp.config("basedpyright", settings)
+vim.lsp.config("basedpyright", settings)
