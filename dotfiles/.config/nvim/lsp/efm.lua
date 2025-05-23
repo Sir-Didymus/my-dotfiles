@@ -25,11 +25,14 @@ local markdownlint = require("efmls-configs.linters.markdownlint")
 local black = require("efmls-configs.formatters.black")
 local ruff = require("efmls-configs.linters.ruff")
 
+-- Rust
+local rustfmt = require("efmls-configs.formatters.rustfmt")
+
 -- Yaml
 local yamllint = require("efmls-configs.linters.yamllint")
 
 -- CMake
-local gersemi = require('efmls-configs.formatters.gersemi')
+local gersemi = require("efmls-configs.formatters.gersemi")
 
 --------------------------
 -- Configure efm server --
@@ -48,14 +51,15 @@ local efm_settings = {
 		"c",
 		"cpp",
 		"css",
-    "cmake",
+		"cmake",
 		"h",
 		"html",
-    "json",
+		"json",
 		"hpp",
 		"lua",
 		"markdown",
 		"python",
+		"rust",
 		"yaml",
 	},
 	init_options = {
@@ -72,13 +76,14 @@ local efm_settings = {
 			c = { clangformat, clangtidy },
 			cpp = { clangformat, clangtidy },
 			css = { prettier_d, stylelint },
-      cmake = { gersemi },
+			cmake = { gersemi },
 			html = { prettier_d },
-      json = { prettier_d },
-			lua = { stylua, luacheck},
+			json = { prettier_d },
+			lua = { stylua, luacheck },
 			markdown = { prettier_d, markdownlint },
 			python = { black, ruff },
-      yaml = { prettier_d, yamllint },
+			rust = { rustfmt },
+			yaml = { prettier_d, yamllint },
 		},
 	},
 }

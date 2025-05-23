@@ -15,6 +15,7 @@ local config = function()
 	vim.lsp.enable("texlab")
 	vim.lsp.enable("taplo")
 	vim.lsp.enable("cmake")
+  vim.lsp.enable("rust_analyzer")
 end
 
 return {

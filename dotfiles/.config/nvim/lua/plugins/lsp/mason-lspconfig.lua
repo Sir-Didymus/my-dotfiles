@@ -12,6 +12,7 @@ local opts = {
 		"ruff",
 		"html",
     "cssls",
+    "rust_analyzer",
     "taplo",
     "texlab",
 	},

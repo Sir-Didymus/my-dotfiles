@@ -40,6 +40,7 @@ local config = function()
 			"markdown_inline",
 			"prolog",
       "python",
+      "rust",
 			"toml",
 			"vim",
 			"vimdoc",
