@@ -5,19 +5,19 @@
 # This allows us to use qt6ct to theme Qt.
 exec --no-startup-id export QT_QPA_PLATFORMTHEME=qt6ct
 
-# set the modifier key
+# Set the modifier key
 set $mod Mod4
 
-# set keyboard layout
+# Set keyboard layout
 exec --no-startup-id setxkbmap de
 
-# start picom compositor
+# Start picom compositor
 exec --no-startup-id picom -b
 
-# configure monitors with xrandr
+# Configure monitors with xrandr
 exec_always --no-startup-id ~/.screenlayout/layout.sh
 
-# start polybar and set wallpaper
+# Start polybar and set wallpaper
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # start dunst
