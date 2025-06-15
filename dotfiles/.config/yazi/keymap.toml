@@ -1,6 +1,6 @@
-[manager]
+[mgr]
 prepend_keymap = [
 	{ on = [ "g", "d" ], run = "cd ~/dev",   desc = "Go ~/dev" },
-	{ on = [ "g", "D" ],       run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
-	{ on = [ "g", "f" ],       run = "cd ~/files",   desc = "Go ~/files" },
+	{ on = [ "g", "D" ], run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
+	{ on = [ "g", "f" ], run = "cd ~/files",   desc = "Go ~/files" },
 ]
