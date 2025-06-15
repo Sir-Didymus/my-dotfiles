@@ -28,6 +28,9 @@ source $ZSH/oh-my-zsh.sh
 # === User Configuration ===
 # ==========================
 
+# Add Cargo's bin directory to the PATH.
+export PATH="$PATH:$HOME/.cargo/bin/"
+
 # Set qt6ct as the Qt platform theme engine.
 # This allows us to use qt6ct to theme Qt.
 export QT_QPA_PLATFORMTHEME=qt6ct
