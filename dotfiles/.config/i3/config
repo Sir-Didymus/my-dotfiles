@@ -5,22 +5,22 @@
 # This allows us to use qt6ct to theme Qt.
 exec --no-startup-id export QT_QPA_PLATFORMTHEME=qt6ct
 
-# Set the modifier key
+# set the modifier key
 set $mod Mod4
 
-# Set the compose key.
+# set the compose key
 exec_always --no-startup-id setxkbmap -option compose:prsc
 
-# Set keyboard layout
+# set keyboard layout
 exec --no-startup-id setxkbmap de
 
-# Start picom compositor
+# start picom compositor
 exec --no-startup-id picom -b
 
-# Configure monitors with xrandr
+# configure monitors with xrandr
 exec_always --no-startup-id ~/.screenlayout/layout.sh
 
-# Start polybar and set wallpaper
+# start polybar and set wallpaper
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # start dunst
@@ -29,6 +29,10 @@ exec --no-startup-id dunst
 # shortcuts for cycling though workplaces
 bindsym $mod+o workspace next
 bindsym $mod+i workspace prev
+
+# Brightness control using brightnessctl
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # font for window titles
 font pango:monospace 8
@@ -201,10 +205,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Make window border width 2 px:
+# make window border width 2 px
 for_window [class="^.*"] border pixel 2
 
-# Catpuccin Theme
+# catpuccin theme colors
 set $rosewater #f5e0dc
 set $flamingo  #f2cdcd
 set $pink      #f5c2e7
