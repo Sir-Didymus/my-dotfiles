@@ -30,7 +30,7 @@ keymap.set("n", "<C-k>", "<C-w>k", opts) -- Navigate Up
 keymap.set("n", "<C-l>", "<C-w>l", opts) -- Navigate Right
 
 ------------------------
--- Wiindow Management --
+-- Window Management --
 ------------------------
 
 keymap.set("n", "<leader>sv", ":vsplit<CR>", opts) -- Split Vertically
@@ -52,3 +52,11 @@ keymap.set("v", ">", ">gv") -- Indent Right
 keymap.set("n", "<leader>td", function()
 	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = "Toggle all lsp diagnostics", noremap = true, silent = true })
+
+--------------
+-- Spelling --
+--------------
+
+keymap.set("n", "<leader>ss", function()
+	vim.opt.spell = not vim.opt.spell:get()
+end, { desc = "Toggle spell checking" })

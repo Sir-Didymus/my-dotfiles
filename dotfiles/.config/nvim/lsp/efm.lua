@@ -1,7 +1,7 @@
 -- mattn/efm-langserver
 -- https://github.com/mattn/efm-langserver
 --
--- Configuration of the "efm-lanserver" LSP server.
+-- Configuration of the "efm-langserver" LSP server.
 --
 -- Efm is a general purpose language server that I use to run linters and formatters
 -- through the language server protocol in nvim.

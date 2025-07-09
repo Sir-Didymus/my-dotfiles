@@ -85,3 +85,6 @@ vim.opt.spell = true
 -- A comma-separated list of word list names.
 -- When the 'spell' option is on spellchecking will be done for these languages.
 vim.opt.spelllang = "en_us,de_de"
+
+-- Name of the word list file where words are added for the `zg` and `zw` commands.
+vim.opt.spellfile = vim.fn.expand("~/.config/nvim/spell/custom.add")
