@@ -1,6 +1,9 @@
--- Configure the "taplo" lsp server.
+-- tamasfe/taplo
+-- https://github.com/tamasfe/taplo
 --
--- Languages: toml
+-- Configuration of the "taplo" LSP server.
+--
+-- Languages: TOML
 
 local on_attach = require("util.lsp").on_attach
 local capabilities = require("util.capabilities").capabilities()

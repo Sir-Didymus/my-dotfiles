@@ -1,4 +1,7 @@
--- Configure the "lua_ls" lsp server.
+-- LuaLS/lua-language-server
+-- https://github.com/LuaLS/lua-language-server
+--
+-- Configuration of the "lua-language-server" LSP server.
 
 local on_attach = require("util.lsp").on_attach
 local capabilities = require("util.capabilities").capabilities()

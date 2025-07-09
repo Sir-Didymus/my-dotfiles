@@ -1,4 +1,7 @@
--- Configure the "texlab" lsp server.
+-- latex-lsp/texlab
+-- https://github.com/latex-lsp/texlab
+--
+-- Configuration the "texlab" LSP server.
 
 local on_attach = require("util.lsp").on_attach
 local capabilities = require("util.capabilities").capabilities()

@@ -74,3 +74,14 @@ vim.opt.splitbelow = true
 
 -- When on, splitting a window with `:vsplit` will put the new window right of the current one.
 vim.opt.splitright = true
+
+----------------
+-- Spellcheck --
+----------------
+
+-- When on spell checking will be done.
+vim.opt.spell = true
+
+-- A comma-separated list of word list names.
+-- When the 'spell' option is on spellchecking will be done for these languages.
+vim.opt.spelllang = "en_us,de_de"

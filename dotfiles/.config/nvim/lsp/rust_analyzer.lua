@@ -1,4 +1,7 @@
--- Configure the "rust_analyzer" lsp server.
+-- rust-lang/rust-analyzer
+-- https://github.com/rust-lang/rust-analyzer
+--
+-- Configuration of the "rust-analyzer" LSP server.
 
 local on_attach = require("util.lsp").on_attach
 local capabilities = require("util.capabilities").capabilities()

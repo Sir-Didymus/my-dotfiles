@@ -1,4 +1,7 @@
--- Configure the "clangd" lsp server.
+-- clangd/clangd
+-- https://github.com/clangd/clangd
+--
+-- Configuration of the "clangd" LSP server.
 
 local on_attach = require("util.lsp").on_attach
 local capabilities = require("util.capabilities").capabilities()

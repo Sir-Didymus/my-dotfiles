@@ -1,4 +1,10 @@
--- Configure the "efm" lsp server.
+-- mattn/efm-langserver
+-- https://github.com/mattn/efm-langserver
+--
+-- Configuration of the "efm-lanserver" LSP server.
+--
+-- Efm is a general purpose language server that I use to run linters and formatters
+-- through the language server protocol in nvim.
 
 -------------------------
 -- Require efm configs --
@@ -11,7 +17,7 @@ local prettier_d = require("efmls-configs.formatters.prettier_d")
 local clangformat = require("efmls-configs.formatters.clang_format")
 local clangtidy = require("efmls-configs.linters.clang_tidy")
 
--- Html / Css
+-- HTML / CSS
 local stylelint = require("efmls-configs.linters.stylelint")
 
 -- Lua
@@ -33,6 +39,9 @@ local yamllint = require("efmls-configs.linters.yamllint")
 
 -- CMake
 local gersemi = require("efmls-configs.formatters.gersemi")
+
+-- Json
+local jsonlint = require("efmls-configs.linters.jsonlint")
 
 --------------------------
 -- Configure efm server --
@@ -78,7 +87,7 @@ local efm_settings = {
 			css = { prettier_d, stylelint },
 			cmake = { gersemi },
 			html = { prettier_d },
-			json = { prettier_d },
+			json = { prettier_d, jsonlint },
 			lua = { stylua, luacheck },
 			markdown = { prettier_d, markdownlint },
 			python = { black, ruff },

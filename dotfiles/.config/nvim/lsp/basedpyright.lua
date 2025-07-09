@@ -1,4 +1,7 @@
 -- DetachHead/basedpyright
+-- https://github.com/DetachHead/basedpyright
+--
+-- Configuration of the "basedpyright" LSP server.
 --
 -- A fork of pyright.
 
