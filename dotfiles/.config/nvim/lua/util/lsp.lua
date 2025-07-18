@@ -18,6 +18,12 @@ M.on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show diagnostics for line
 	vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 
+	-- Inlay hints
+	if client.server_capabilities.inlayHintProvider then
+		-- If Server supports inlay hints, activate them for the current buffer.
+		vim.lsp.inlay_hint.enable(true, nil, bufnr)
+	end
+
 	-- Formatting with efm
 	if client.name == "efm" then
 		vim.keymap.set("n", "<leader>fe", function()

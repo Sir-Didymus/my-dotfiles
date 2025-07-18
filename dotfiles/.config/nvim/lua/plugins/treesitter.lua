@@ -5,7 +5,7 @@
 
 local config = function()
 	require("nvim-treesitter.configs").setup({
-		version = false, -- last release is way too old and doesn't work on Windows
+		version = false, -- last release is way too old
 		build = ":TSUpdate",
 		autotag = { enable = false },
 		highlight = { enable = true },
@@ -25,7 +25,8 @@ local config = function()
       "cmake",
 			"cpp",
 			"css",
-      "comment",
+      "comment", -- Treesitter grammar for comment tags like TODO, FIXME, etc.
+      "doxygen", -- Treesitter grammar for doxygen comments.
 			"gitignore",
 			"html",
       "http",

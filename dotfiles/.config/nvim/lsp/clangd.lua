@@ -12,6 +12,21 @@ local settings = {
 	on_attach = on_attach,
 	cmd = {
 		"clangd",
+		"--completion-style=detailed",
+		"--inlay-hints",
+	},
+	settings = {
+		["clangd"] = {
+			InlayHints = {
+				BlockEnd = false,
+				Designators = true,
+				Enabled = true,
+				ParameterNames = true,
+				DeducedTypes = true,
+				DefaultArguments = true,
+				TypeNameLimit = 24,
+			},
+		},
 	},
 }
 

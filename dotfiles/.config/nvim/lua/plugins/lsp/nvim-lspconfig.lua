@@ -1,11 +1,11 @@
 -- neovim/nvim-lspconfig
 --
--- nvim-lspconfig is a "data only" repo,
+-- nvim-lspconfig is a "data only" repository,
 -- providing basic, default Nvim LSP client configurations for various LSP servers.
 
 -- configure nvim-lspconfig
 local config = function()
-	-- enable lsps
+	-- enable LSPs
 	vim.lsp.enable("html")
 	vim.lsp.enable("efm")
 	vim.lsp.enable("basedpyright")
@@ -15,13 +15,16 @@ local config = function()
 	vim.lsp.enable("texlab")
 	vim.lsp.enable("taplo")
 	vim.lsp.enable("cmake")
-  vim.lsp.enable("rust_analyzer")
+	vim.lsp.enable("rust_analyzer")
 end
 
 return {
 	"neovim/nvim-lspconfig",
-	config = config,
 	lazy = false,
+	config = config,
+	opts = {
+		inlay_hints = { enabled = true },
+	},
 	dependencies = {
 		"windwp/nvim-autopairs",
 		"williamboman/mason.nvim",

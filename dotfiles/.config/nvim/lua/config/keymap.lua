@@ -60,3 +60,8 @@ end, { desc = "Toggle all lsp diagnostics", noremap = true, silent = true })
 keymap.set("n", "<leader>ss", function()
 	vim.opt.spell = not vim.opt.spell:get()
 end, { desc = "Toggle spell checking" })
+
+vim.api.nvim_create_user_command("BatchRenameBase58", function()
+	require("util.rename").BatchRenameBase58()
+end, {})
+
