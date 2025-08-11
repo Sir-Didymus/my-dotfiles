@@ -31,11 +31,17 @@ source $ZSH/oh-my-zsh.sh
 # Add Cargo's bin directory to the PATH.
 export PATH="$PATH:$HOME/.cargo/bin/"
 
+# Add ".local/bin" to the PATH.
+export PATH="$HOME/.local/bin:$PATH"
+
+# Set CHROME_EXECUTABLE env var
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+
 # Set qt6ct as the Qt platform theme engine.
 # This allows us to use qt6ct to theme Qt.
 export QT_QPA_PLATFORMTHEME=qt6ct
 
-# Set preferred ligth-weight editor.
+# Set preferred light-weight editor.
 export EDITOR=nvim
 
 # Set preferred full-fledged editor.
