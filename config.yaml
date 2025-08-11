@@ -42,6 +42,9 @@ dotfiles:
   d_wallpapers:
     src: .config/wallpapers
     dst: ~/.config/wallpapers
+  d_yamllint:
+    src: .config/yamllint
+    dst: ~/.config/yamllint
 profiles:
   default:
     dotfiles:
@@ -55,6 +58,7 @@ profiles:
       - d_kitty
       - d_zathura
       - d_wallpapers
+      - d_yamllint
   Gandalf:
     include:
       - default
