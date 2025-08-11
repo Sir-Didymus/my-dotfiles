@@ -1,4 +1,5 @@
 -- catppuccin/nvim
+-- https://github.com/catppuccin/nvim
 --
 -- Catpuccin theme for neovim.
 

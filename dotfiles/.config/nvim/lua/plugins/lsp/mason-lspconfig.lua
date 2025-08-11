@@ -4,17 +4,18 @@
 
 local opts = {
 	ensure_installed = {
-		"efm",
-		"lua_ls",
+		"basedpyright",
+		"cssls",
 		"clangd",
-    "cmake",
-    "basedpyright",
-		"ruff",
+		"cmake",
+		"efm",
 		"html",
-    "cssls",
-    "rust_analyzer",
-    "taplo",
-    "texlab",
+		"lua_ls",
+		"ruff",
+		"rust_analyzer",
+		"sqls",
+		"taplo",
+		"texlab",
 	},
 	automatic_installation = true,
 }

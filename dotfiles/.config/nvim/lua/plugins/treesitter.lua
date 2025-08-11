@@ -22,26 +22,29 @@ local config = function()
 		ensure_installed = {
 			"bash",
 			"c",
-      "cmake",
+			"cmake",
 			"cpp",
 			"css",
-      "comment", -- Treesitter grammar for comment tags like TODO, FIXME, etc.
-      "doxygen", -- Treesitter grammar for doxygen comments.
+			"comment", -- Treesitter grammar for comment tags like TODO, FIXME, etc.
+			"dart",
+			"doxygen", -- Treesitter grammar for doxygen comments.
 			"gitignore",
 			"html",
-      "http",
-      "ini",
+			"http",
+			"ini",
 			"javascript",
-      "json",
-      "latex",
+			"json",
+			"latex",
 			"lua",
 			"luadoc",
 			"make",
 			"markdown",
 			"markdown_inline",
 			"prolog",
-      "python",
-      "rust",
+			"python",
+			"rust",
+			"ssh_config", -- Treesitter grammar for OpenSSH client configuration files.
+			"sql",
 			"toml",
 			"vim",
 			"vimdoc",

@@ -34,6 +34,10 @@ local ruff = require("efmls-configs.linters.ruff")
 -- Rust
 local rustfmt = require("efmls-configs.formatters.rustfmt")
 
+-- SQL
+local sqlfluff = require("efmls-configs.linters.sqlfluff")
+local sqruff = require("efmls-configs.formatters.sqruff")
+
 -- Yaml
 local yamllint = require("efmls-configs.linters.yamllint")
 
@@ -69,6 +73,7 @@ local efm_settings = {
 		"markdown",
 		"python",
 		"rust",
+		"sql",
 		"yaml",
 	},
 	init_options = {
@@ -92,6 +97,7 @@ local efm_settings = {
 			markdown = { prettier_d, markdownlint },
 			python = { black, ruff },
 			rust = { rustfmt },
+			sql = { sqruff, sqlfluff },
 			yaml = { prettier_d, yamllint },
 		},
 	},
