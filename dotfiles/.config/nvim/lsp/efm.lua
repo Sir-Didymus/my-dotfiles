@@ -13,6 +13,10 @@
 -- Prettier_d - Works for many languages
 local prettier_d = require("efmls-configs.formatters.prettier_d")
 
+-- Protobuf
+local buf_lint = require("efmls-configs.linters.buf")
+local buf_format = require("efmls-configs.formatters.buf")
+
 -- C / Cpp
 local clangformat = require("efmls-configs.formatters.clang_format")
 local clangtidy = require("efmls-configs.linters.clang_tidy")
@@ -99,6 +103,7 @@ local efm_settings = {
 			rust = { rustfmt },
 			sql = { sqruff, sqlfluff },
 			yaml = { prettier_d, yamllint },
+			protobuf = { buf_format, buf_lint },
 		},
 	},
 }

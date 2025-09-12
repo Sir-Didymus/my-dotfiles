@@ -41,6 +41,7 @@ local config = function()
 			"markdown",
 			"markdown_inline",
 			"prolog",
+      "proto", -- Treesitter grammar for protocol buffer files.
 			"python",
 			"rust",
 			"ssh_config", -- Treesitter grammar for OpenSSH client configuration files.

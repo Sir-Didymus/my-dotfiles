@@ -25,4 +25,4 @@ local settings = {
 	},
 }
 
-vim.lsp.config("lua", settings)
+vim.lsp.config("lua_ls", settings)
