@@ -17,6 +17,7 @@ local config = function()
   vim.lsp.enable("sqls")
 	vim.lsp.enable("texlab")
 	vim.lsp.enable("taplo")
+  vim.lsp.enable("json-ls")
 end
 
 return {
