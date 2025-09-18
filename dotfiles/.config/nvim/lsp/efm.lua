@@ -5,6 +5,9 @@
 --
 -- Efm is a general purpose language server that I use to run linters and formatters
 -- through the language server protocol in nvim.
+--
+-- I use [efml-configs](https://github.com/creativenull/efmls-configs-nvim), which provides default
+-- configurations for a lot of formatters and liners.
 
 -------------------------
 -- Require efm configs --
@@ -29,7 +32,10 @@ local stylua = require("efmls-configs.formatters.stylua")
 local luacheck = require("efmls-configs.linters.luacheck")
 
 -- Markdown
-local markdownlint = require("efmls-configs.linters.markdownlint")
+local default_markdownlint = require("efmls-configs.linters.markdownlint")
+local markdownlint = vim.tbl_extend("force", default_markdownlint, {
+	lintCommand = "markdownlint --stdin -c $HOME/.config/nvim/markdownlint.json",
+})
 
 -- Python
 local black = require("efmls-configs.formatters.black")
