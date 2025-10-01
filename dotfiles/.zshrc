@@ -27,8 +27,14 @@ source $ZSH/oh-my-zsh.sh
 # === User Configuration ===
 # ==========================
 
+# FlameMaster.
+source $HOME/dev/projects/work/flamemaster/Bin/bin/Source.zsh
+
 # Add Cargo's bin directory to the PATH.
 export PATH="$PATH:$HOME/.cargo/bin/"
+
+# Add Dart's bin directory to PATH.
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Add ".local/bin" to the PATH.
 export PATH="$HOME/.local/bin:$PATH"

@@ -4,48 +4,51 @@
 -- Installs and upgrades third-party tools.
 
 return {
-	"WhoIsSethDaniel/mason-tool-installer",
-	dependencies = {
-		"Williamboman/mason.nvim",
-	},
-	config = function()
-		require("mason-tool-installer").setup({
-			ensure_installed = {
-				-- Multi-language
-				"prettierd",
+  "WhoIsSethDaniel/mason-tool-installer",
+  dependencies = {
+    "Williamboman/mason.nvim",
+  },
+  config = function()
+    require("mason-tool-installer").setup({
+      ensure_installed = {
+        -- Multi-language
+        "prettierd",
 
-				-- HTML / CSS
-				"stylelint",
+        -- HTML / CSS
+        "stylelint",
 
-				-- Lua
-				"stylua",
-				"luacheck",
+        -- Lua
+        "stylua",
+        "luacheck",
 
-				-- Markdown
-				"markdownlint",
+        -- Markdown
+        "markdownlint",
 
-				-- Python
-				"black",
-				"ruff",
+        -- Python
+        "black",
+        "ruff",
 
-				-- Rust
-				"rustfmt",
+        -- Rust
+        "rustfmt",
 
-				-- SQL
-				"sqlfluff",
-				"sqruff",
+        -- SQL
+        "sqlfluff",
+        "sqruff",
 
-				-- Yaml
-				"yamllint",
+        -- Yaml
+        "yamllint",
 
-				-- CMake
-				"gersemi",
+        -- CMake
+        "gersemi",
 
-				-- Json
-				"jsonlint",
-			},
-			auto_update = true,
-			run_on_start = true,
-		})
-	end,
+        -- Json
+        "jsonlint",
+
+        -- Latex
+        "latexindent"
+      },
+      auto_update = true,
+      run_on_start = true,
+    })
+  end,
 }

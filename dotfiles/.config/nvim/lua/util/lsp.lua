@@ -41,6 +41,11 @@ M.on_attach = function(client, bufnr)
 			})
 		end, { desc = "Format file with LSP" }) -- Add description for which-key
 	end
+
+	-- Disable semantic tokens
+	if client.name == "buf_ls" then
+		client.server_capabilities.semanticTokensProvider = nil
+	end
 end
 
 return M

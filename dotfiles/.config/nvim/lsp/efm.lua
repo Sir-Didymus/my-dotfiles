@@ -48,6 +48,9 @@ local rustfmt = require("efmls-configs.formatters.rustfmt")
 local sqlfluff = require("efmls-configs.linters.sqlfluff")
 local sqruff = require("efmls-configs.formatters.sqruff")
 
+-- Tex
+local latexindent = require("efmls-configs.formatters.latexindent")
+
 -- Yaml
 local yamllint = require("efmls-configs.linters.yamllint")
 
@@ -84,6 +87,7 @@ local efm_settings = {
 		"python",
 		"rust",
 		"sql",
+		"tex",
 		"yaml",
 	},
 	init_options = {
@@ -108,6 +112,7 @@ local efm_settings = {
 			python = { black, ruff },
 			rust = { rustfmt },
 			sql = { sqruff, sqlfluff },
+			tex = { latexindent },
 			yaml = { prettier_d, yamllint },
 			protobuf = { buf_format, buf_lint },
 		},
