@@ -5,11 +5,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Disable instant prompt console-io warning
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# =================== #
+# ===== PLUGINS ===== #
+# =================== #
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -21,23 +28,28 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+# Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # ==========================
 # === User Configuration ===
 # ==========================
 
-# FlameMaster.
-source $HOME/dev/projects/work/flamemaster/Bin/bin/Source.zsh
+# ========== ADD TO PATH ========== #
 
-# Add Cargo's bin directory to the PATH.
+# Cargo's bin directory
 export PATH="$PATH:$HOME/.cargo/bin/"
-
-# Add Dart's bin directory to PATH.
+# Latex
+export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
+# Dart's bin directory.
 export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-# Add ".local/bin" to the PATH.
+# ~/.local/bin
 export PATH="$HOME/.local/bin:$PATH"
+
+# ========== OTHER SETTINGS ========== #
+
+# FlameMaster
+source $HOME/dev/projects/work/flamemaster/Bin/bin/Source.zsh
 
 # Set CHROME_EXECUTABLE env var
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
@@ -46,21 +58,23 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 # This allows us to use qt6ct to theme Qt.
 export QT_QPA_PLATFORMTHEME=qt6ct
 
-# Set preferred light-weight editor.
+# Set preferred light-weight editor
 export EDITOR=nvim
 
-# Set preferred full-fledged editor.
+# Set preferred full-fledged editor
 export VISUAL=nvim
 
-# Set language.
+# Set language
 export LANG=en_US.UTF-8
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ========== CUSTOM FUNCTIONS ========== #
 
 # Wrapper function for yazi.
 # Provides the ability to change the current working directory when exiting yazi.
