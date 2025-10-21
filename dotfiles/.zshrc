@@ -50,7 +50,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # FlameMaster
 FLAMEMASTER_PATH="$HOME/dev/projects/work/flamemaster/Bin/bin/Source.zsh"
-[[ -f "$FLAMEMASTER_PATH"]] && source "$FLAMEMASTER_PATH"
+[[ -f "$FLAMEMASTER_PATH" ]] && source "$FLAMEMASTER_PATH"
 
 # Set CHROME_EXECUTABLE env var
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
