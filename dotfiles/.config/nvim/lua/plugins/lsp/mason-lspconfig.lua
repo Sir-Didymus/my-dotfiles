@@ -16,7 +16,7 @@ local opts = {
 		"sqls",
 		"taplo",
 		"texlab",
-		"buf_ls",
+		--"buf_ls",
 	},
 	automatic_installation = true,
 }

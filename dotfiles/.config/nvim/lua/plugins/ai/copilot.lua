@@ -1,10 +1,11 @@
 -- zbirenbaum/copilot.lua
+-- https://github.com/zbirenbaum/copilot.lua
 --
 -- Replacement for copilot.vim.
 
 return {
 	"zbirenbaum/copilot.lua",
-	enabled = false, -- disables copilot by default
+	enabled = true, -- enables copilot by default
 	cmd = "Copilot",
 	event = "InsertEnter",
 	config = function()
@@ -16,3 +17,4 @@ return {
 		})
 	end,
 }
+

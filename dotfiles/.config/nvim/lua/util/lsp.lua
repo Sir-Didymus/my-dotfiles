@@ -22,7 +22,7 @@ M.on_attach = function(client, bufnr)
 	-- Inlay hints
 	if client.server_capabilities.inlayHintProvider then
 		-- If Server supports inlay hints, activate them for the current buffer.
-		vim.lsp.inlay_hint.enable(true, nil, bufnr)
+		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	end
 
 	-- Formatting with efm
@@ -43,9 +43,9 @@ M.on_attach = function(client, bufnr)
 	end
 
 	-- Disable semantic tokens
-	if client.name == "buf_ls" then
-		client.server_capabilities.semanticTokensProvider = nil
-	end
+	-- if client.name == "buf_ls" then
+	-- 	client.server_capabilities.semanticTokensProvider = nil
+	-- end
 end
 
 return M
