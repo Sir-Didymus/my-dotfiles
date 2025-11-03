@@ -480,3 +480,6 @@ ActionDocError
 Ok
 an
 LoroText
+CreateActionRequestPB
+dto
+ActionDtoPB
