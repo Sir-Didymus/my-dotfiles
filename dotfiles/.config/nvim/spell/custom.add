@@ -483,3 +483,7 @@ LoroText
 CreateActionRequestPB
 dto
 ActionDtoPB
+searchsorted
+np
+colorscheme
+matplotlib

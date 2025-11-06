@@ -4,9 +4,9 @@
 -- Spellcheck dictionary for programmers.
 
 return {
-	"psliwka/vim-dirtytalk",
-	build = ":DirtytalkUpdate",
-	config = function()
-		vim.opt.spelllang = { "en_us", "de_de", "programming" }
-	end,
+  "psliwka/vim-dirtytalk",
+  build = ":DirtytalkUpdate",
+  config = function()
+    vim.opt.spelllang = { "en_us", "de_de", "programming" }
+  end,
 }

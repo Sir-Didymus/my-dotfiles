@@ -1,10 +1,10 @@
----------------------
--- Set vim options --
----------------------
+----------------------------
+----- Set vim options ------
+----------------------------
 
------------------------
--- Tab / indentation --
------------------------
+-----------------------------
+----- Tab / indentation -----
+-----------------------------
 
 -- This setting tells Vim how many columns a tab should be made up of in the editor view.
 -- It takes care only of how tabs will be rendered and has no effect on the actual text.
@@ -33,18 +33,18 @@ vim.opt.smartindent = true
 -- This is the Vim default.
 vim.opt.wrap = false
 
-------------
--- Search --
-------------
+------------------
+----- Search -----
+------------------
 
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 
-----------------
--- Appearance --
-----------------
+----------------------
+----- Appearance -----
+----------------------
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -59,9 +59,9 @@ vim.opt.colorcolumn = "100"
 -- Enables the signcolumn.
 vim.opt.signcolumn = "yes"
 
---------------
--- Behavior --
---------------
+--------------------
+----- Behavior -----
+--------------------
 
 -- When off, a buffer is unloaded when it is abandoned.
 -- When on, a buffer becomes hidden when it is abandoned.
@@ -75,16 +75,20 @@ vim.opt.splitbelow = true
 -- When on, splitting a window with `:vsplit` will put the new window right of the current one.
 vim.opt.splitright = true
 
-----------------
--- Spellcheck --
-----------------
+----------------------
+----- Spellcheck -----
+----------------------
 
 -- When on spell checking will be done.
 vim.opt.spell = true
 
+-- A comma-separated list of flags that change the behavior of the spell checker.
+-- Enable camel case checking.
+vim.opt.spelloptions = "camel"
+
 -- A comma-separated list of word list names.
 -- When the 'spell' option is on spellchecking will be done for these languages.
-vim.opt.spelllang = "en_us,de_de"
+vim.opt.spelllang = { "en_us", "de_de", "programming" }
 
 -- Name of the word list file where words are added for the `zg` and `zw` commands.
 vim.opt.spellfile = vim.fn.expand("~/.config/nvim/spell/custom.add")
