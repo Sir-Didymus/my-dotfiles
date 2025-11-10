@@ -1,6 +1,10 @@
 [mgr]
 prepend_keymap = [
-	{ on = [ "g", "d" ], run = "cd ~/dev",   desc = "Go ~/dev" },
-	{ on = [ "g", "D" ], run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
-	{ on = [ "g", "f" ], run = "cd ~/files",   desc = "Go ~/files" },
+	{ on = [ "g", "h" ], run = "cd ~/data",   desc = "Go ~/data" },
+	{ on = [ "g", "H" ], run = "cd ~", desc = "Go ~" },
+	{ on = [ "g", "D" ], run = "cd ~/data/downloads",   desc = "Go ~/data/downloads" },
+	{ on = [ "g", "f" ], run = "cd ~/data/files",   desc = "Go ~/data/files" },
+	{ on = [ "g", "d" ], run = "cd ~/data/dev",   desc = "Go ~/data/dev" },
+	{ on = [ "g", "p", "w" ], run = "cd ~/data/dev/projects/work",   desc = "Go ~/data/dev/projects/work" },
+	{ on = [ "g", "p", "p" ], run = "cd ~/data/dev/projects/personal",   desc = "Go ~/data/dev/projects/personal" },
 ]
