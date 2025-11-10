@@ -49,7 +49,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # ========== OTHER SETTINGS ========== #
 
 # FlameMaster
-FLAMEMASTER_PATH="$HOME/dev/projects/work/flamemaster/Bin/bin/Source.zsh"
+FLAMEMASTER_PATH="$HOME/data/dev/projects/work/flamemaster/Bin/bin/Source.zsh"
 [[ -f "$FLAMEMASTER_PATH" ]] && source "$FLAMEMASTER_PATH"
 
 # Set CHROME_EXECUTABLE env var
