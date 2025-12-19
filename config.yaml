@@ -48,6 +48,9 @@ dotfiles:
   f_p10k.zsh:
     src: .p10k.zsh
     dst: ~/.p10k.zsh
+  f_xprofile:
+    src: .xprofile
+    dst: ~/.xprofile
 profiles:
   default:
     dotfiles:
@@ -63,6 +66,7 @@ profiles:
       - d_wallpapers
       - d_yamllint
       - f_p10k.zsh
+      - f_xprofile
   Gandalf:
     include:
       - default
