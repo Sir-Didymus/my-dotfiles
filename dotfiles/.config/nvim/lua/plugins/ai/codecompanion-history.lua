@@ -3,5 +3,4 @@
 
 return {
 	"ravitemer/codecompanion-history.nvim",
-	commit = "eb99d256352144cf3b6a1c45608ec25544a0813d",
 }

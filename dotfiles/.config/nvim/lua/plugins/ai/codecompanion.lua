@@ -1,8 +1,28 @@
 -- olimorris/codecompanion.nvim
 --
--- CodeCompanion is a productivity tool which streamlines how you develop with LLMs, in Neovim.
+-- CodeCompanion is a productivity tool which streamlines how you develop with
+-- LLMs, in Neovim.
 
 local config = function()
+	-- 1. DEFINE THE TABLE STRUCTURE FIRST
+	local project_rules_group = {
+		description = "Project Specific Rules",
+		files = {}, -- Start empty
+	}
+
+	-- 2. DYNAMICALLY LOAD AND MERGE
+	-- We load the file and inject its content directly into the 'files' key
+	local rule_file = vim.fn.getcwd() .. "/.rules/rules.lua"
+	if vim.fn.filereadable(rule_file) == 1 then
+		local chunk = loadfile(rule_file)
+		if chunk then
+			local success, result = pcall(chunk)
+			if success and type(result) == "table" then
+				project_rules_group.files = result
+			end
+		end
+	end
+
 	-- Set keybinding to show codecompanion actions
 	vim.keymap.set(
 		"n",
@@ -18,37 +38,12 @@ local config = function()
 	)
 
 	require("codecompanion").setup({
-		memory = {
-			helia = {
-				description = "Helia memory files",
-				parser = "claude",
-				files = {
-					"README.md",
-					["helia-backend"] = {
-						description = "The Rust backend of helia-app.",
-						files = {
-							["Meta Info"] = {
-								description = "High level information about the Rust backend.",
-								files = {
-									"helia-app/helia-backend/README.md",
-								},
-							},
-							["helia-state"] = {
-								description = "The helia-state crate of the Rust backend.",
-								files = {
-									".codecompanion/helia-app/helia-backend/helia-state/helia-state.md",
-								},
-							},
-							["helia-core"] = {
-								description = "helia-core crate of the Rust backend.",
-								files = {
-									".codecompanion/helia-app/helia-backend/helia-core/helia-core.md",
-								},
-							},
-						},
-					},
-				},
+		rules = {
+			default = {
+				description = "Default rules",
+				files = {},
 			},
+			project_rules = project_rules_group,
 		},
 		extensions = {
 			history = {
@@ -141,11 +136,14 @@ end
 
 return {
 	"olimorris/codecompanion.nvim",
-	tag = "v17.33.0",
+	version = "^18.0.0",
 	config = config,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"ravitemer/codecompanion-history.nvim",
+	},
+	opts = {
+		log_level = "DEBUG", -- or "TRACE"
 	},
 }
