@@ -124,13 +124,12 @@ tbl_col = { bold = true }
 
 [icon]
 globs = [
-  { name = "/home/felix/data/", text = "", fg = "#89b4fa"},
-
-  { name = "/home/felix/data/files/", text = "", fg = "#a6e3a1" },
-  { name = "/home/felix/data/downloads/", text = "", fg = "#94e2d5" },
-  { name = "/home/felix/data/dev/", text = "", fg = "#fab387" },
-  { name = "/home/felix/data/tmp/", text = "", fg = "#f38ba8" },
-  { name = "/home/felix/data/logseq/", text = "󰍔", fg = "#f5c2e7" }
+  { name = "/home/felix/data/", text = "", fg = "#89b4fa", url = ""},
+  { name = "/home/felix/data/files/", text = "", fg = "#a6e3a1", url = ""},
+  { name = "/home/felix/data/downloads/", text = "", fg = "#94e2d5", url = "" },
+  { name = "/home/felix/data/dev/", text = "", fg = "#fab387", url = "" },
+  { name = "/home/felix/data/tmp/", text = "", fg = "#f38ba8", url = "" },
+  { name = "/home/felix/data/logseq/", text = "󰍔", fg = "#f5c2e7", url = "" }
 ]
 
 files = [
