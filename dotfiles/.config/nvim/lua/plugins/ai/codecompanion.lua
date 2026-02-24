@@ -44,7 +44,7 @@ local config = function()
         description = "Default rules",
         files = {},
       },
-      project_rules = project_rules_group,
+      Project = project_rules_group,
     },
     extensions = {
       history = {
