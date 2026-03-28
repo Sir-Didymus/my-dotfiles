@@ -86,6 +86,7 @@ local efm_settings = {
 		"markdown",
 		"python",
 		"rust",
+    ".scss",
 		"sql",
 		"tex",
 		"yaml",

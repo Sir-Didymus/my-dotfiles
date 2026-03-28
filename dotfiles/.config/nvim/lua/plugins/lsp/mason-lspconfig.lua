@@ -10,6 +10,7 @@ local opts = {
 		"cmake",
 		"efm",
 		"html",
+		"jinja_lsp",
 		"lua_ls",
 		"ruff",
 		"rust_analyzer",
