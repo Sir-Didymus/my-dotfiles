@@ -11,4 +11,4 @@ local settings = {
   filetypes = { "html", "jinja", "jinja.html" },
 }
 
-vim.lsp.config("jinja_lsp", settings)
+return settings

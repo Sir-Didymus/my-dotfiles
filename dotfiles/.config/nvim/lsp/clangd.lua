@@ -30,4 +30,4 @@ local settings = {
 	},
 }
 
-vim.lsp.config("clangd", settings)
+return settings

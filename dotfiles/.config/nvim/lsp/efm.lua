@@ -120,4 +120,4 @@ local efm_settings = {
 	},
 }
 
-vim.lsp.config("efm", efm_settings)
+return efm_settings

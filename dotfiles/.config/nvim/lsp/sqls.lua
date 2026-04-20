@@ -14,4 +14,4 @@ local settings = {
 	on_attach = on_attach,
 }
 
-vim.lsp.config("sqls", settings)
+return settings

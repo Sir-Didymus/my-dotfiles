@@ -19,7 +19,7 @@ return {
 
         -- Lua
         "stylua",
-        "luacheck",
+        --"luacheck",
 
         -- Markdown
         "markdownlint",
@@ -29,7 +29,7 @@ return {
         "ruff",
 
         -- Rust
-        "rustfmt",
+        --"rustfmt",
 
         -- SQL
         "sqlfluff",

@@ -20,4 +20,4 @@ local settings = {
 	},
 }
 
-vim.lsp.config("rust_analyzer", settings)
+return settings

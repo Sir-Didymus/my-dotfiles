@@ -15,4 +15,4 @@ local settings = {
 	filetypes = { "toml" },
 }
 
-vim.lsp.config("taplo", settings)
+return settings

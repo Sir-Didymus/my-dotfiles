@@ -25,4 +25,4 @@ local settings = {
   },
 }
 
-vim.lsp.config("basedpyright", settings)
+return settings

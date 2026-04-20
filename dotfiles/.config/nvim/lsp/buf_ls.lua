@@ -11,4 +11,4 @@ local settings = {
 	on_attach = on_attach,
 }
 
-vim.lsp.config("buf_ls", settings)
+return settings

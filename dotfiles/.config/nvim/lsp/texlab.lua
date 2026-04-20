@@ -18,4 +18,4 @@ local settings = {
 	},
 }
 
-vim.lsp.config("texlab", settings)
+return settings

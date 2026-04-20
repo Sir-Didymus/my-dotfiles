@@ -7,7 +7,7 @@ local opts = {
 		"basedpyright",
 		"cssls",
 		"clangd",
-		"cmake",
+    --"cmake-language-server",
 		"efm",
 		"html",
 		"jinja_lsp",

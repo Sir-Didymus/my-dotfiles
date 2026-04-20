@@ -11,4 +11,4 @@ local settings = {
 	on_attach = on_attach,
 }
 
-vim.lsp.config("html", settings)
+return settings
