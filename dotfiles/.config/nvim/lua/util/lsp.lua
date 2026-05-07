@@ -33,7 +33,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	-- Formatting with lsp
-	if client.name ~= "efm" and client.supports_method("textDocument/formatting") then
+	if client.name ~= "efm" and client:supports_method("textDocument/formatting") then
 		vim.keymap.set("n", "<leader>fl", function()
 			vim.lsp.buf.format({
 				name = client.name,
