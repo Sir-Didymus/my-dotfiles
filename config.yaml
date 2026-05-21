@@ -79,7 +79,7 @@ profiles:
       - f_xprofile
       - f_vimrc
       - f_ideavimrc
-  Gandalf:
+  gandalf:
     include:
       - default
   Sauron:
