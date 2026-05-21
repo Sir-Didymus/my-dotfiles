@@ -1,0 +1,28 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles-system
+  keepdot: true
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+  impignore:
+    - lazy-lock.json
+  cmpignore:
+    - lazy-lock.json
+
+dotfiles:
+  d_sddm-astronaut-theme:
+    src: usr/share/sddm/themes/sddm-astronaut-theme
+    dst: /usr/share/sddm/themes/sddm-astronaut-theme
+profiles:
+  default:
+    dotfiles:
+      - d_sddm-astronaut-theme
+  gandalf:
+    include:
+      - default
+  Sauron:
+    include:
+      - default
