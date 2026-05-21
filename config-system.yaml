@@ -16,10 +16,19 @@ dotfiles:
   d_sddm-astronaut-theme:
     src: usr/share/sddm/themes/sddm-astronaut-theme
     dst: /usr/share/sddm/themes/sddm-astronaut-theme
+  d_sddm.conf.d:
+    src: etc/sddm.conf.d
+    dst: /etc/sddm.conf.d
+  f_sddm.conf:
+    src: etc/sddm.conf
+    dst: /etc/sddm.conf
+
 profiles:
   default:
     dotfiles:
       - d_sddm-astronaut-theme
+      - d_sddm.conf.d
+      - f_sddm.conf
   gandalf:
     include:
       - default

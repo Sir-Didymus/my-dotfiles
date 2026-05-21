@@ -11,6 +11,7 @@ config:
     - lazy-lock.json
   cmpignore:
     - lazy-lock.json
+
 dotfiles:
   d_i3:
     src: .config/i3
@@ -60,6 +61,7 @@ dotfiles:
   d_environment.d:
     src: .config/environment.d
     dst: ~/.config/environment.d
+
 profiles:
   default:
     dotfiles:
