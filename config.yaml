@@ -8,9 +8,9 @@ config:
   link_on_import: nolink
   longkey: false
   impignore:
-  - lazy-lock.json
+    - lazy-lock.json
   cmpignore:
-  - lazy-lock.json
+    - lazy-lock.json
 
 dotfiles:
   d_i3:
@@ -64,29 +64,33 @@ dotfiles:
   f_flameshot.ini:
     src: .config/flameshot/flameshot.ini
     dst: ~/.config/flameshot/flameshot.ini
+  d_hypr:
+    src: .config/hypr
+    dst: ~/.config/hypr
 profiles:
   default:
     dotfiles:
-    - d_i3
-    - d_nvim
-    - d_polybar
-    - d_rofi
-    - f_zshrc
-    - d_alacritty
-    - d_yazi
-    - d_kitty
-    - d_zathura
-    - d_wallpapers
-    - d_yamllint
-    - d_environment.d
-    - f_p10k.zsh
-    - f_xprofile
-    - f_vimrc
-    - f_ideavimrc
-    - f_flameshot.ini
+      - d_i3
+      - d_nvim
+      - d_polybar
+      - d_rofi
+      - f_zshrc
+      - d_alacritty
+      - d_yazi
+      - d_kitty
+      - d_zathura
+      - d_wallpapers
+      - d_yamllint
+      - d_environment.d
+      - f_p10k.zsh
+      - f_xprofile
+      - f_vimrc
+      - f_ideavimrc
+      - f_flameshot.ini
+      - d_hypr
   gandalf:
     include:
-    - default
+      - default
   Sauron:
     include:
-    - default
+      - default
