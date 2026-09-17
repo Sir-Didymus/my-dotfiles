@@ -67,6 +67,9 @@ dotfiles:
   d_hypr:
     src: .config/hypr
     dst: ~/.config/hypr
+  d_waybar:
+    src: .config/waybar
+    dst: ~/.config/waybar
 profiles:
   default:
     dotfiles:
@@ -88,6 +91,7 @@ profiles:
       - f_ideavimrc
       - f_flameshot.ini
       - d_hypr
+      - d_waybar
   gandalf:
     include:
       - default

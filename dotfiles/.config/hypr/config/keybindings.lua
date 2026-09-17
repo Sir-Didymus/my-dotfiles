@@ -39,6 +39,22 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 -- Toggle split layout
 hl.bind(mainMod .. " + E", hl.dsp.layout("togglesplit"))
 
+-- i3-style tabs: group the focused window with its neighbor into a tab stack.
+-- Tab navigation reuses the H/J/K/L focus binds above (see
+-- binds.movefocus_cycles_groupfirst in hyprland.lua)
+hl.bind(mainMod .. " + W", hl.dsp.group.toggle())
+
+-- Group-aware move: merges into an adjacent group, or ejects out of the
+-- group, depending on direction/context
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.move({ direction = "left", group_aware = true }))
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.move({ direction = "right", group_aware = true }))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.move({ direction = "up", group_aware = true }))
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.move({ direction = "down", group_aware = true }))
+
+-- Reorder the focused window's tab position within its group
+hl.bind(mainMod .. " + CTRL + I", hl.dsp.group.move_window({ forward = false }))
+hl.bind(mainMod .. " + CTRL + O", hl.dsp.group.move_window({ forward = true }))
+
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(Menu))
 

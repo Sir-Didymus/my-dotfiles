@@ -16,6 +16,10 @@ require("config.programs")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
 
+hl.on("hyprland.start", function()
+	hl.exec_cmd("waybar")
+end)
+
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
@@ -161,6 +165,14 @@ hl.config({
 hl.config({
 	scrolling = {
 		fullscreen_on_one_column = true,
+	},
+})
+
+-- i3-style group navigation: movefocus (SUPER+H/J/K/L) cycles tabs within a
+-- group before moving focus to other tiles. See hyprwm/Hyprland#2517.
+hl.config({
+	binds = {
+		movefocus_cycles_groupfirst = true,
 	},
 })
 
