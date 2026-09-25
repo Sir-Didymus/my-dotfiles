@@ -15,9 +15,12 @@ closeWindowBind:set_enabled(true)
 -- Applications launcher
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("~/.config/rofi/launcher/launcher.sh"))
 
+-- Toggle Thunderbird visibility (birdtray) - see scripts/toggle-thunderbird.sh
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-thunderbird.sh"))
+
 -- Quit Hyprland
 hl.bind(
-  mainMod .. " + M",
+  mainMod .. " + SHIFT + M",
   hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 
