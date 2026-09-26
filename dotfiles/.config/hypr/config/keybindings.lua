@@ -75,6 +75,14 @@ for i = 1, 10 do
   hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Workspaces 11-20 (left monitor, see config/monitors.lua) on mainMod + CTRL + [0-9],
+-- moving a window there with mainMod + CTRL + SHIFT + [0-9] -- same as the i3 config
+for i = 11, 20 do
+  local key = i % 10 -- 20 maps to key 0
+  hl.bind(mainMod .. " + CTRL + " .. key, hl.dsp.focus({ workspace = i }))
+  hl.bind(mainMod .. " + CTRL + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+end
+
 -- Switch to prev/next existing workspace with mainMod + i/o
 hl.bind(mainMod .. " + I", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + O", hl.dsp.focus({ workspace = "e+1" }))
