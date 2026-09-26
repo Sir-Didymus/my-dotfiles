@@ -56,12 +56,28 @@
   // ══════════════════════════════════════════════════════════════════
   "hyprland/workspaces": {
     "format": "{name}",
-    "all-outputs": true,
+
+    // false = each bar only lists the workspaces living on its own monitor.
+    // Combined with the workspace rules in ~/.config/hypr/config/monitors.lua
+    // (1-10 -> right / Dell, 11-20 -> left / BenQ) the right bar shows 1-10 and
+    // the left bar 11-20. With `true` every bar mirrors all 20.
+    "all-outputs": false,
+
     "disable-scroll": true,
     "warp-on-scroll": false,
     "on-click": "activate",
-    // Uncomment for a fixed row of workspaces that are always visible:
-    // "persistent-workspaces": { "*": 5 },
+
+    // Uncomment for a fixed row that is always visible, empty or not: each
+    // workspace is pinned to the output(s) it may appear on. Note that waybar
+    // matches connector names only (no `desc:` like Hyprland), so these need
+    // updating if the monitors ever land on different ports.
+    // "persistent-workspaces": {
+    //   "1": ["DP-2"], "2": ["DP-2"], "3": ["DP-2"], "4": ["DP-2"], "5": ["DP-2"],
+    //   "6": ["DP-2"], "7": ["DP-2"], "8": ["DP-2"], "9": ["DP-2"], "10": ["DP-2"],
+    //   "11": ["HDMI-A-1"], "12": ["HDMI-A-1"], "13": ["HDMI-A-1"], "14": ["HDMI-A-1"],
+    //   "15": ["HDMI-A-1"], "16": ["HDMI-A-1"], "17": ["HDMI-A-1"], "18": ["HDMI-A-1"],
+    //   "19": ["HDMI-A-1"], "20": ["HDMI-A-1"],
+    // },
   },
 
   "hyprland/window": {
