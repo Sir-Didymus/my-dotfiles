@@ -27,6 +27,9 @@ hl.bind(
 -- File manager
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(FileManager))
 
+-- Screenshot (interactive region select)
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("flameshot gui"))
+
 -- Move focus with mainMod + h/j/k/l (vim-style)
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
@@ -75,10 +78,6 @@ end
 -- Switch to prev/next existing workspace with mainMod + i/o
 hl.bind(mainMod .. " + I", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + O", hl.dsp.focus({ workspace = "e+1" }))
-
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

@@ -17,6 +17,9 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("waybar")
   hl.exec_cmd("wl-paste --type text --watch cliphist store")
   hl.exec_cmd("wl-paste --type image --watch cliphist store")
+  -- Screenshot daemon, so SUPER+SHIFT+S doesn't cold-start it. No tray wait
+  -- needed here (unlike birdtray) since disabledTrayIcon=true in flameshot.ini
+  hl.exec_cmd("flameshot")
   -- Waits for XWayland/the tray host to be ready before starting birdtray -
   -- see scripts/start-birdtray.sh for why
   hl.exec_cmd("~/.config/hypr/scripts/start-birdtray.sh")

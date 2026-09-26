@@ -1,0 +1,229 @@
+/* ══════════════════════════════════════════════════════════════════════
+   Waybar — transparent bar, floating rounded "pill" groups.
+
+   Structure waybar builds (GTK boxes, and CSS selectors match them):
+
+     window#waybar
+     └── box.modules-right
+         └── widget              <- wrapper waybar adds around each module
+             └── #resources      <- the group/ box  = your <div>
+                 ├── widget → #cpu
+                 ├── widget → #memory
+                 └── widget → #battery
+
+   The PILL is painted on the group (#resources); the children inside it
+   are transparent so the rounded corners stay intact.
+
+   Note: this is GTK3 CSS, not web CSS. No flex, no gap, no grid,
+   no pseudo-elements. border-radius / padding / margin / background /
+   color / box-shadow / transition / @keyframes all work.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Palette (Catppuccin Mocha) — change these to retheme everything ── */
+@define-color base #1e1e2e;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color overlay0 #6c7086;
+@define-color text #cdd6f4;
+@define-color subtext #a6adc8;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color peach #fab387;
+@define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color teal #94e2d5;
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  /* Stops GTK from imposing a minimum height that inflates the pills */
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* ── 1. The bar itself is invisible ─────────────────────────────────── */
+window#waybar {
+  background: transparent;
+  color: @text;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* ── 2. The pill ────────────────────────────────────────────────────────
+   Applied to the two group boxes and to the standalone modules that
+   should read as their own pill. Add new group ids to this list.        */
+#resources,
+#status,
+#tray,
+#workspaces,
+#mpris,
+#window {
+  background-color: alpha(@base, 0.92);
+  border: 1px solid alpha(@surface1, 0.45);
+  border-radius: 8px;
+  padding: 0 4px;
+  /* vertical = pill height inside the 34px bar; horizontal = gap between
+     pills (adjacent pills each contribute 4px, so the gap reads as 8px) */
+  margin: 4px 4px;
+  box-shadow: 0 1px 3px alpha(#000000, 0.35);
+}
+
+/* ── 3. Children are transparent so the pill shows through ──────────────
+   Only list modules that live INSIDE a group here. A standalone module
+   is its own pill, so putting it in this block would cancel the
+   background it was just given in section 2 (same #id specificity, and
+   this block comes later, so it wins).                                  */
+#cpu,
+#memory,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#clock {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0 8px;
+  color: @text;
+}
+
+/* A little colour on the icons/labels to keep the pills readable */
+#cpu {
+  color: @green;
+}
+#memory {
+  color: @mauve;
+}
+#backlight {
+  color: @yellow;
+}
+#pulseaudio {
+  color: @blue;
+}
+#network {
+  color: @teal;
+}
+#battery {
+  color: @green;
+}
+#clock {
+  color: @lavender;
+  font-weight: 600;
+}
+#mpris {
+  color: @peach;
+  padding: 0 10px;
+}
+/* Centre pill: full-strength text, not the dim italic subtext — on a
+   light wallpaper the old styling was almost unreadable. */
+#window {
+  color: @text;
+  padding: 0 12px;
+}
+
+/* ── 4. Workspaces — the pill holds small round buttons ─────────────── */
+#workspaces {
+  padding: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin: 3px 2px;
+  min-width: 14px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: @overlay0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  /* Kills the default inset underline from the stock stylesheet */
+  box-shadow: none;
+}
+
+#workspaces button:hover {
+  background-color: alpha(@surface1, 0.7);
+  color: @text;
+  box-shadow: none;
+}
+
+#workspaces button.active {
+  background-color: @blue;
+  color: @base;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @base;
+}
+
+/* ── 5. Module states ───────────────────────────────────────────────── */
+#pulseaudio.muted {
+  color: @overlay0;
+}
+
+#network.disconnected,
+#network.linked {
+  color: @red;
+}
+
+#battery.warning:not(.charging) {
+  color: @peach;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @teal;
+}
+
+@keyframes blink {
+  to {
+    color: @red;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: @yellow;
+  animation-name: blink;
+  animation-duration: 1s;
+  /* steps() instead of linear keeps CPU usage down */
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Hide the centre pill's background when no window is focused, so an
+   empty rounded box doesn't float in the middle of the bar. */
+window#waybar.empty #window {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* ── 6. Tray ────────────────────────────────────────────────────────── */
+#tray {
+  padding: 0 6px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* ── 7. Tooltips ────────────────────────────────────────────────────── */
+tooltip {
+  background-color: @base;
+  border: 1px solid @surface1;
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: @text;
+  padding: 4px;
+}

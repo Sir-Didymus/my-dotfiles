@@ -1,217 +1,160 @@
 {
+  // ══════════════════════════════════════════════════════════════════
+  //  BAR
+  //  The bar itself is transparent (see style.css). Everything you see
+  //  is a "pill": either a group/ box or a single module styled as one.
+  // ══════════════════════════════════════════════════════════════════
   "layer": "top",
-  "height": 30,
-  "spacing": 4, // Gaps between modules
-  "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/mode",
-    "sway/scratchpad",
-    "custom/media",
-  ],
-  "modules-center": ["sway/window"],
-  "modules-right": [
-    "mpd",
-    "idle_inhibitor",
-    "pulseaudio",
-    "network",
-    "power-profiles-daemon",
-    "cpu",
-    "memory",
-    "temperature",
-    "backlight",
-    "keyboard-state",
-    "sway/language",
-    "battery",
-    "battery#bat2",
-    "clock",
-    "tray",
-    "custom/power",
-  ],
-  // Modules configuration
+  "position": "top",
+  "height": 34,
+
+  // 0 — all gaps between pills come from CSS `margin`, so the look is
+  // controlled in one place instead of split between JSON and CSS.
+  "spacing": 0,
+
+  // Float the bar off the screen edges. Use these instead of a CSS
+  // margin on window#waybar so the reserved (exclusive) zone is correct.
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  // Re-reads style.css whenever you save it — no need to restart waybar.
+  "reload_style_on_change": true,
+
+  "modules-left": ["hyprland/workspaces", "mpris"],
+  "modules-center": ["hyprland/window"],
+  // Array order is LEFT to RIGHT, so this reads as:
+  //   [tray]  [cpu ram battery]  [brightness volume net clock]
+  "modules-right": ["tray", "group/resources", "group/status"],
+
+  // ══════════════════════════════════════════════════════════════════
+  //  GROUPS — these are your <div>s.
+  //
+  //  "group/resources"  ->  CSS selector  #resources   (name after the /)
+  //
+  //  IMPORTANT: "orientation" defaults to "orthogonal", which on a
+  //  horizontal bar means the children stack VERTICALLY. Always set
+  //  "horizontal" explicitly for a top bar.
+  //
+  //  Not every pill needs a group: a lone module is already its own box,
+  //  so #workspaces / #mpris / #window are styled as pills directly.
+  //  That also means they vanish cleanly when they have nothing to show,
+  //  which an empty group box would not.
+  // ══════════════════════════════════════════════════════════════════
+  "group/resources": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "battery"],
+  },
+
+  "group/status": {
+    "orientation": "horizontal",
+    "modules": ["backlight", "pulseaudio", "network", "clock"],
+  },
+
+  // ══════════════════════════════════════════════════════════════════
+  //  MODULES
+  // ══════════════════════════════════════════════════════════════════
   "hyprland/workspaces": {
-    "disable-scroll": true,
+    "format": "{name}",
     "all-outputs": true,
+    "disable-scroll": true,
     "warp-on-scroll": false,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "default": "1",
-      "on-click": "activate",
-    },
+    "on-click": "activate",
+    // Uncomment for a fixed row of workspaces that are always visible:
+    // "persistent-workspaces": { "*": 5 },
   },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": "",
-    },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 60,
+    "separate-outputs": true,
   },
-  "hyprland/submap": {
-    "format": "<span style=\"italic\">{}</span>",
+
+  // Built-in media module (your build links libplayerctl, so it works).
+  // Hidden automatically when no player is running.
+  "mpris": {
+    "format": "{player_icon}  {dynamic}",
+    "format-paused": "{status_icon}  <i>{dynamic}</i>",
+    "dynamic-order": ["title", "artist"],
+    "dynamic-len": 35,
+    "max-length": 45,
+    "player-icons": { "default": "󰐊" },
+    "status-icons": { "paused": "󰏤" },
   },
-  "sway/scratchpad": {
-    "format": "{icon} {count}",
-    "show-empty": false,
-    "format-icons": ["", ""],
-    "tooltip": true,
-    "tooltip-format": "{app}: {title}",
-  },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " ",
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " ",
-    },
-    "repeat-icons": {
-      "on": " ",
-    },
-    "single-icons": {
-      "on": "1 ",
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": "",
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)",
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": "",
-    },
-  },
-  "tray": {
-    // "icon-size": 21,
-    "spacing": 10,
-    // "icons": {
-    //   "blueman": "bluetooth",
-    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    // }
-  },
-  "clock": {
-    // "timezone": "America/New_York",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}",
-  },
+
+  // All icons below are Material Design glyphs (nf-md-*) from the Nerd
+  // Font — the outline style used in the reference screenshot. Every one
+  // is verified present in JetBrainsMonoNerdFont-Regular.ttf.
+
   "cpu": {
-    "format": "{usage}% ",
+    "format": "󰻠 {usage}%",
+    "interval": 2,
     "tooltip": false,
   },
+
   "memory": {
-    "format": "{}% ",
+    "format": "󰍛 {}%",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f} GiB / {total:0.1f} GiB",
   },
-  "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": ["󰉬", "", "󰉪"],
-  },
+
   "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
     "min-brightness": 1,
+    "tooltip": false,
   },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "portable": "󰦢",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+  },
+
+  // Symbol only, as in the screenshot — SSID and IP live in the tooltip,
+  // which also keeps a long SSID from stretching the pill.
+  "network": {
+    "format-wifi": "󰖩",
+    "format-ethernet": "󰈀",
+    "format-linked": "󰌙",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname} · {ipaddr}/{cidr} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}",
+    "tooltip-format-ethernet": "{ifname} · {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+  },
+
   "battery": {
     "states": {
-      // "good": 95,
       "warning": 30,
       "critical": 15,
     },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰃨",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": ["", "", "", "", ""],
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"],
+    "tooltip-format": "{timeTo} ({power:0.1f} W)",
   },
-  "battery#bat2": {
-    "bat": "BAT2",
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8,
   },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nCPU driver: {cpu_driver}\nPlatform driver: {platform_driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": "",
-    },
-  },
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "format-linked": "{ifname} (No IP) 󰊗",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-  },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "󰅶 {icon} {format_source}",
-    "format-muted": "󰅶 {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "󰂑",
-      "headset": "󰂑",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
-    },
-    "on-click": "pavucontrol",
-  },
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜",
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-  },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate",
-    },
+
+  "clock": {
+    "format": "󰥔 {:%H:%M}",
+    "format-alt": "󰃭 {:%a %d %b}", // click to toggle
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
 }
