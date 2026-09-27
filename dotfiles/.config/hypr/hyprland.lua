@@ -175,10 +175,12 @@ hl.config({
 
 hl.config({
 	input = {
-		kb_layout = "de",
-		kb_variant = "",
+		-- ir_phonetic lives in ~/.config/xkb/symbols/ (see the ir_phonetic repo).
+		-- Alt+Shift cycles between the two layouts.
+		kb_layout = "de,ir_phonetic",
+		kb_variant = ",basic",
 		kb_model = "",
-		kb_options = "compose:prsc",
+		kb_options = "compose:prsc,grp:alt_shift_toggle",
 		kb_rules = "",
 
 		follow_mouse = 1,
