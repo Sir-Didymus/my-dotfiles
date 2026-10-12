@@ -14,6 +14,9 @@ local opts = {
 		"lua_ls",
 		"ruff",
 		"rust_analyzer",
+		-- "metals" is not available via Mason; install the prebuilt artifact via
+		-- coursier instead (AUR: coursier-bin):
+		--   cs install metals
 		"sqls",
 		"taplo",
 		"texlab",

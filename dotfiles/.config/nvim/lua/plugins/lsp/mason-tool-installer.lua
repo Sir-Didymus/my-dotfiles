@@ -31,6 +31,11 @@ return {
         -- Rust
         --"rustfmt",
 
+        -- Scala
+        -- Not available via Mason; install via coursier instead (AUR: coursier-bin):
+        --   cs install scalafmt
+        --"scalafmt",
+
         -- SQL
         "sqlfluff",
         "sqruff",

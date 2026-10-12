@@ -45,6 +45,7 @@ local config = function()
     "proto", -- Treesitter grammar for protocol buffer files.
     "python",
     "rust",
+    "scala",
     "ssh_config", -- Treesitter grammar for OpenSSH client configuration files.
     "sql",
     "toml",
