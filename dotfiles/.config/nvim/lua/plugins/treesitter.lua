@@ -33,6 +33,7 @@ local config = function()
     "html",
     "http",
     "ini",
+    "java",
     "javascript",
     "json",
     "latex",

@@ -10,6 +10,7 @@ local opts = {
     --"cmake-language-server",
 		"efm",
 		"html",
+		"jdtls",
 		"jinja_lsp",
 		"lua_ls",
 		"ruff",
