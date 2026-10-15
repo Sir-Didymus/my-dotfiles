@@ -45,6 +45,8 @@ export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 # ~/.local/bin
 export PATH="$HOME/.local/bin:$PATH"
+# Coursier-installed apps (e.g. metals, scalafmt)
+export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
 # ========== OTHER SETTINGS ========== #
 
@@ -87,3 +89,6 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# Access ElevenLabs API Key
+elevenlabs() { ELEVENLABS_API_KEY="$(rbw get 'ElevenLabs Persian5k')" "$@"; }
