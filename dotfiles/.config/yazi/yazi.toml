@@ -3,10 +3,10 @@ show_hidden = false # Hide hidden files by default
 
 [opener]
 play = [
-  { run = 'vlc "$@"', orphan = true, for = "unix" },
-  { run = 'mpv "$@"', orphan = true, for = "unix" },
+  { run = 'vlc %s', orphan = true, for = "unix" },
+  { run = 'mpv %s', orphan = true, for = "unix" },
 ]
-zathura = [{ run = 'zathura "$@"', orphan = true, for = "unix" }]
+zathura = [{ run = 'zathura %s', orphan = true, for = "unix" }]
 
 [open]
 prepend_rules = [
