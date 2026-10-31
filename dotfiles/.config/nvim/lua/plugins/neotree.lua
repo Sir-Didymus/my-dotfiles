@@ -10,6 +10,7 @@ local config = function()
 			filtered_items = {
 				visible = true, -- when true, they will just be displayed differently than normal item
 			},
+			use_libuv_file_watcher = true, -- live refresh on fs/git changes, including from outside nvim
 		},
 	})
 end
